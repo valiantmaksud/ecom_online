@@ -1,0 +1,11 @@
+.btn-group-xs>.btn, .btn-xs {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-width: 3px;
+}
+.btn-group-minier>.btn, .btn-minier {
+    padding: 0 4px;
+    line-height: 18px;
+    border-width: 2px;
+    font-size: 12px;
+}

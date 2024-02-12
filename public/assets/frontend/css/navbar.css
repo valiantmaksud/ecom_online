@@ -1,0 +1,157 @@
+/* START MAIN SETTING OF NAVBAR EVERY PART WIDTH */
+.navbar{
+    position: relative;
+    background-color: var(--p--colorWhite);
+    box-shadow: 0 0 35px 5px rgb(156 156 156 / 16%);
+}
+.navbar .container-fluid{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .site-logo {
+    width: 15%;
+    margin-right: 3%;
+}
+.navbar_buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 7%;
+}
+.navbar .navbar-items {
+    width: 73%;
+    margin-right: 4%;
+}
+/* END */
+.navbar_buttons i{
+    color: #000;
+    font-size: 20px;
+}
+.navbar_buttons .search_btn{
+    color: #000;
+    font-size: 20px;
+    position: relative;
+}
+.navbar_buttons .wishlist-icon .wishlist-count {
+    position: absolute;
+    right: -7px;
+    top: -8px;
+    font-size: 12px;
+    color: #fff;
+    background-color: red;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    line-height: 17px;
+    border-radius: 50%;
+}
+.navbar_buttons_menu {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.navbar .navbar_buttons .wishlist-icon{
+    position: relative;
+}
+
+/* navbar items button css */
+.navbar .navbar-nav{
+    list-style: none;
+    text-align: center;
+}
+.navbar .navbar-nav .nav-item {
+    display: inline-block;
+}
+.navbar .navbar-nav .nav-item a {
+    display: block;
+    padding: 8px 15px 4px 15px;
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 400;
+    text-transform: uppercase;
+    /* margin: 0 10px; */
+    font-size: 14px;
+}
+.navbar .navbar-nav .nav-item a,
+.navbar .navbar-nav .nav-item a:after,
+.navbar .navbar-nav .nav-item a:before {
+    transition: all .5s;
+}
+.navbar .navbar-nav .nav-item a:hover {
+    color: #555;
+}
+
+.navbar .navbar-nav .nav-item a {
+    position:relative;
+    z-index: 1;
+}
+.navbar .navbar-nav .nav-item a:hover {
+    /* color: #91640F; */
+    color: #fff !important;
+}
+.navbar .navbar-nav .nav-item a:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 1px;
+    content: '.';
+    color: transparent;
+    /* background: #F1C40F; */
+    background: #000;
+    visibility: none;
+    opacity: 0;
+    z-index: -1;
+}
+.navbar .navbar-nav .nav-item a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+}
+
+.navbar-toggler{
+	position: relative;
+	display:  inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 0px;
+    border-radius: 5px;
+    background: white;
+    box-shadow: rgb(136 165 191 / 48%) 6px 2px 16px 0px, rgb(255 255 255 / 80%) -6px -2px 16px 0px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: white;
+    transition: all .5s ease;
+}
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+/* category-sidebar */
+.category-sidebar .offcanvas-header {
+    text-align: right;
+    display: flex;
+    justify-content: end;
+    padding: 8px;
+}
+.category-sidebar .offcanvas-start {
+    width: 222px;
+}
+
+
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}	

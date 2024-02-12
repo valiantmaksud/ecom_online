@@ -1,0 +1,39 @@
+.pl-0{
+    padding-left: 0;
+}
+.pr-0{
+    padding-right: 0;
+}
+.ml-0{
+    margin-left: 0;
+}
+.mr-0{
+    margin-right: 0;
+}
+img{
+    width: 100%;
+    /* height:100%; */
+}
+
+
+.mobile_menu{
+    height: unset !important;
+}
+
+ul.drop_menu{
+    display: none;
+    margin-left: 20px;
+}
+
+ul.final_drop{
+    display: none;
+    margin-left: 10px;
+}
+
+.mobile_menu > ul > li:hover ul.drop_menu{
+    display: block;
+}
+
+ul.drop_menu > li:hover ul.final_drop{
+    display: block;
+}

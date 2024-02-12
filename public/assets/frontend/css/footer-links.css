@@ -1,0 +1,799 @@
+/* ================================
+    about us page start here
+===================================*/
+.about_us {
+    margin: 80px 0;
+}
+
+/* .about_inner .about_image img{
+    width: 100%;
+} */
+
+.about_inner .common_title h2 {
+    font-weight: bold;
+}
+
+.about_us .about_content p{
+    font-size: 14px;
+    color: #666;
+}
+
+/* ================================
+    about us page end here
+===================================*/
+
+
+/* ================================
+    contact us page start here
+===================================*/
+.contact_section{
+    margin-top: 70px;
+}
+
+.contact_form .contact-form-body label {
+    margin-bottom: 3px;
+    font-size: 16px;
+}
+
+.contact_form .contact-form-body input, .contact_form .contact-form-body select, .contact_form .contact-form-body textarea {
+    padding: 2px;
+    width: 76%;
+    border: 1px solid #999;
+    outline: none;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.contact_form .contact-form-body select {
+    padding: 8px;
+}
+
+.contact_btn a {
+    font-size: 13px;
+    padding: 10px 35px;
+    background-color: #7aa93c;
+    color: #fff;
+    display: inline-block;
+}
+
+.contact_box .contact_title p {
+    font-size: 26px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact_box .contact_title p span {
+    font-weight: 800;
+}
+
+.contact_box .icon {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #000;
+    color: #fff;
+}
+
+.contact_box .icon i {
+    font-size: 22px;
+}
+
+.contact_title .contact_info {
+    display: flex;
+}
+
+.contact_info {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact_info .contact_number {
+    margin-left: 9px;
+}
+
+.contact_info .contact_number a {
+    color: #000;
+}
+
+@media screen and (max-width: 575px) {
+    .contact_form .contact-form-body input, .contact_form .contact-form-body select, .contact_form .contact-form-body textarea {
+        width: 100%;
+    }
+}
+/* ================================
+    contact us page end here
+===================================*/
+
+/* ================================
+    terms and condition page start here
+===================================*/
+.condition_section{
+    margin-top: 70px;
+}
+
+.condition_inner .condition_content span {
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 14px;
+    display: block;
+}
+
+.condition_inner .condition_content p {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.condition_inner .condition_content ul {
+    margin-left: 12px;
+}
+
+.condition_inner .condition_content ul li {
+    list-style: circle;
+    margin-bottom: 5px;
+}
+/* ===============================
+    terms and condition page end here
+=================================*/
+
+/* =================================
+    payment page start here
+====================================*/
+.payment_rules {
+    margin-top: 70px;
+}
+
+.payment_inner p {
+    font-size: 17px;
+    margin-top: 21px;
+}
+
+.payment_inner span {
+    font-weight: bold;
+    margin-top: 12px;
+    display: block;
+}
+
+.payment_inner ul {
+    margin-left: 13px;
+}
+
+.payment_inner ul li {
+    list-style: circle;
+    margin-top: 5px;
+}
+
+/* =================================
+    payment page end here
+====================================*/
+
+
+/* ==============================
+    {{ website_setting('site_title') }} guide page start here
+================================*/
+.mallguide_section{
+    margin-top: 70px;
+}
+
+.mallguide_inner .common_title h2 {
+    padding-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.mallguide_inner .common_title h2:before {
+    position: absolute;
+    content: "";
+    height: 4px;
+    width: 80%;
+    background-color: var(--p--pinkColor);
+    left: 10%;
+    bottom: 0;
+}
+
+.mallguide_inner .common_title {
+    max-width: 70%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.mallguide_inner .common_title p {
+    font-size: 22px;
+    line-height: 37px;
+    margin-bottom: 20px;
+}
+
+.mallguide_inner .guide_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+}
+
+.mallguide_inner .guide_box .guide_box_content {
+    text-align: center;
+    max-width: 550px;
+}
+
+.mallguide_inner .guide_box .guide_box_content h3 {
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 47px;
+}
+
+.mallguide_inner .guide_box .guide_box_content a {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #138496;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.mallguide_inner .guide_box .guide_box_content a:hover{
+    background-color: #17a2b8;
+}
+
+@media screen and (max-width: 767px) {
+    .mallguide_inner .guide_box .guide_box_content h3{
+        font-size: 27px;
+    }
+
+    .mallguide_inner .guide_box .guide_box_content a{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .mallguide_inner .common_title{
+        max-width: 100%;
+    }
+
+    .mallguide_inner .common_title p{
+        text-align: justify;
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+/* ==============================
+   {{ website_setting('site_title') }} guide page end here
+================================*/
+
+/* ===============================
+    vip privilige page start here
+==================================*/
+/* .head_image img {
+    width: 100%;
+} */
+
+/* privilige tab */
+.active[data-tab-content] {
+    display: block;
+  }
+
+  .privilige_tab .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 0;
+  }
+
+  .privilige_tab .tab {
+    margin:0 10px 10px 0;
+  }
+
+  .privilige_tab .tab.active a {
+    background-color: #ffc82c;
+  }
+
+  .privilige_tab .tab:hover a {
+    background-color: #ffc82c;
+    transition: 0.3s ease-in-out;
+  }
+
+  .privilige_tab .tab-content {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+/* privilige tab */
+
+.privilige_tab {
+    margin: 50px 0;
+}
+
+.privilize_box a {
+    padding: 15px 42px;
+    height: 185px;
+    width: 168px;
+    display: block;
+    background-color: #f7f7f7;
+    border-radius: 20px;
+}
+
+.privilize_box a img {
+    width: 50px;
+    margin: auto;
+    display: block;
+    margin-top: 42%;
+}
+
+.privilize_box a span {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #222;
+}
+
+.pri_port_box {
+    max-width: 304px;
+    height: 290px;
+    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%),
+     0 5px 8px 0 rgb(0 0 0 / 14%),
+      0 1px 14px 0 rgb(0 0 0 / 12%);
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.pri_port_box:hover{
+    box-shadow: 0 12px 16px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+}
+
+
+.privilige_content_box {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.privilige_content_box .pri_port_box {
+    margin: 0 10px 10px 0;
+}
+
+
+.pri_port_box a img {
+    display: block;
+    max-width: 50%;
+    margin: auto;
+}
+
+.pri_port_box a .desc {
+    text-align: center;
+}
+
+.privilige_portfolio .desc h3 {
+    margin: 15px 0 3px;
+    font-size: 19px;
+}
+
+.pri_port_box a .desc strong {
+    font-size: 10px;
+    color: #7aa93c;
+}
+
+.pri_port_box a .desc p {
+    font-size: 12px;
+    color: #d92727ed;
+    font-weight: bold;
+}
+
+/* .privilige_vip img {
+    width: 100%;
+} */
+
+.privilige_off {
+    margin: 50px 0;
+}
+
+/* ===============================
+    vip privilige page end here
+==================================*/
+
+/* ================================
+    how to place order page start here
+===================================*/
+.order_section {
+    margin: 46px 0;
+}
+
+.order_inner h4 {
+    padding: 20px 0;
+    font-size: 21px;
+    text-align: left !important;
+}
+
+.order_inner h4 a {color: #7aa93c;}
+
+.order_inner h4 a:hover {
+    text-decoration: underline;
+}
+/* ================================
+    how to place order page end here
+===================================*/
+
+
+/* ================================
+    return policy page start here
+===================================*/
+.return_section {
+    margin: 90px 0;
+}
+
+.return_inner .return_title {
+    margin: 20px 0;
+}
+
+.return_inner .return_title h4 {
+    font-size: 25px;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.return_title p {
+    font-size: 17px;
+}
+
+.return_inner .return_title span {
+    font-size: 12px;
+    text-decoration: underline;
+    margin-top: 15px;
+    display: block;
+}
+
+.return_inner ul, .policy ul {
+    margin-left: 20px;
+}
+
+.return_inner ul li, .policy ul li {
+    list-style: circle;
+    margin-bottom: 6px;
+}
+
+.lifestyle_title h3 {
+    font-size: 31px;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.lifestyle_p_inner .policy h4 {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.policy {
+    margin-bottom: 20px;
+}
+
+/* ================================
+    return policy page end here
+===================================*/
+
+
+/* ===============================
+    shipping delivery start here
+==================================*/
+.shipping_delivery_inner p {
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.shipping_delivery_inner p span {
+    font-weight: bold;
+}
+
+.shipping_delivery {
+    margin: 70px 0;
+}
+/* ===============================
+    shipping delivery end here
+==================================*/
+
+/* ====================================
+    how to become vip page start here
+=====================================*/
+.vip_ban{
+    margin: 50px 0;
+}
+
+/* .vip_ban img {
+    width: 100%;
+} */
+
+.vip_inner .common_title img {
+    width: 50%;
+    margin: auto;
+}
+
+.vip_rules h3 {
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.vip_rules ul {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+.vip_term h3{
+    margin-top: 30px;
+    text-align: center;
+}
+.vip_term .terms{
+    text-align: center;
+}
+.vip_rules .rules{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.vip_rules ul li {
+    list-style: circle;
+    margin-bottom: 8px;
+}
+
+.vip_inner .reward {
+    text-align: center;
+}
+
+.vip_inner .reward .common_title {
+    margin-top: 40px;
+}
+
+.vip_inner .reward .common_title p {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.vip_inner .reward .common_title img {
+    width: 50px;
+}
+
+.vip_inner .reward img {
+    width: 104px;
+}
+
+.vip_inner .reward a {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 16px 34px;
+    font-size: large;
+    background-color: #b41f23;
+    border: 1px solid #b41f23;
+    color: #fff;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+}
+
+.vip_inner .reward a:hover{
+    color: #b41f23;
+    background-color: transparent;
+}
+
+/* ===================================
+    how to become vip page start here
+=====================================*/
+
+/* =================================
+    {{ website_setting('site_title') }} global page start here
+====================================*/
+.global_section{
+    margin: 80px 0;
+}
+
+.global_inner .common_title h2 {
+    color: #b41f23;
+}
+
+.global_inner .common_title p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.global_content p {
+    font-size: large;
+    line-height: 34px;
+    color: #666;
+    margin: 24px 0;
+}
+
+.global_content span {
+    font-weight: bold;
+    display: block;
+    font-size: 23px;
+    margin-top: 10px;
+    color: #b41f23;
+}
+
+.global_content ul{
+    margin-left: 10px;
+}
+
+.global_content ul li{
+    font-size: large;
+    line-height: 34px;
+    color: #666;
+}
+
+.global_product .round_box {
+    width: 275px;
+    height: 275px;
+    text-align: center;
+    margin: auto;
+    background-color: #ffdf72;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #000;
+}
+
+.global_product .round_box:hover center{
+    text-decoration: underline;
+}
+
+.global_product .round_box img {
+    width: 90px;
+}
+
+.global_product .round_box p {
+    font-size: 24px;
+    margin: 0;
+}
+
+.global_product .round_box p,
+ .global_product .round_box span{
+    color: #b41f23;
+ }
+
+.global_product .round_box span {
+    font-weight: bold;
+    font-size: 28px;
+}
+
+/* .glb_img img {
+    width: 100%;
+} */
+
+.global_order_inner .common_title h2 {
+    margin-top: 30px;
+}
+
+.int_order_cart .int_order_box img {
+    width: 100px;
+}
+
+.int_order_cart .int_order_box {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b41f23;
+}
+
+.int_order_cart .desc {
+    padding: 20px;
+}
+
+.int_order_cart .desc p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.int_order_cart .desc a {
+    font-size: 16px;
+    text-decoration: underline;
+    color: #777;
+}
+
+.int_order_cart .desc {
+    background-color: #fff;
+}
+
+.int_order_cart {
+    box-shadow: 0px 0px 2px 2px lightgrey;
+}
+
+.global_payment .common_title h2{
+    color: #b41f23;
+}
+
+.global_contact{
+    margin-top: 20px;
+}
+
+.global_contact p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* =================================
+    {{ website_setting('site_title') }} global page end here
+====================================*/
+
+
+/* ================================
+    loyality card page start here
+===================================*/
+.get_lCard {
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #000;
+}
+
+.get_lCard h4 {
+    font-size: 30px;
+    line-height: 34px;
+    text-align: center;
+    color: #fff;
+    margin: 30px 0 18px;
+}
+
+/* .loyal_cards .cards_img img {
+    width: 100%;
+} */
+
+.protfolio_card a img {
+    max-width: 250px;
+}
+
+.protfolio_card {
+    text-align: center;
+    padding: 20px;
+    height: 344px;
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.protfolio_card .desc p {
+    font-size: 14px;
+    text-align: justify;
+    color: #333;
+    margin-top: 30px;
+}
+
+.loyality_rules {
+    margin: 40px 0;
+}
+
+.loyality_rules ul li {
+    list-style: circle;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 991px) {
+    .protfolio_card a img {
+        max-width: 164px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .protfolio_card{
+        margin-bottom: 20px;
+        height: 300px;
+    }
+
+}
+
+@media screen and (max-width: 575px) {
+    .get_lCard h4{
+        font-size: 22px;
+    }
+
+    .loyality_rules ul{
+        margin-left: 10px;
+    }
+}
+/* ================================
+    loyalily card page start here
+===================================*/

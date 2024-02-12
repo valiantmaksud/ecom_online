@@ -1,0 +1,403 @@
+
+/* =================================
+    check out page start here
+====================================*/
+.checkout_section {
+    margin-top: 40px;
+}
+
+.check_left .check_title h4 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.check_left .check_title p {
+    font-size: 14px;
+    margin: 15px 0 20px;
+}
+
+.check_left .delevery_address > p {
+    margin-bottom: 18px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.accordion-button:not(.collapsed){
+    background-color: unset;
+    color: unset;
+    padding: 10px;
+}
+
+.accordion-item:first-of-type .accordion-button{
+    padding: 10px;
+}
+
+.accordion-item:last-of-type .accordion-button.collapsed{
+    padding: 10px;
+    border-radius: 0;
+}
+
+.accordion-button:focus{
+    border: none;
+    box-shadow: none;
+}
+
+.accordion-button p {
+    font-size: 14px;
+}
+
+.accordion-body {
+    /* text-align: center; */
+    padding: 10px;
+    margin: 10px;
+    border: 2px dashed lightgray;
+    cursor: pointer;
+}
+
+.accordion-body p {
+    font-size: 12px;
+}
+
+.accordion_form {
+    padding: 7px;
+    background-color: #80808017;
+    /* transform-origin: top; */
+    transform: scale(0);
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+}
+
+.country_form{
+    display: none;
+}
+
+.open_form{
+    display: block;
+}
+
+.accordion_form {
+    padding: 25px 17px;
+    background-color: #80808017;
+}
+
+.accordion_form .form_portion input {
+    width: 100%;
+}
+
+.accordion_form i {
+    display: block;
+    text-align: end;
+    font-weight: bold;
+    color: red;
+}
+
+.accordion_form label {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.accordion_form i {
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.accordion_form .address_portion,
+ .accordion_form input {
+    outline: none;
+    border: none;
+    padding: 5px;
+    font-size: 13px;
+}
+
+.accordion_form .address_portion#city {
+    padding: 8px 4px;
+}
+
+.accordion_form .address_portion {
+    width: 100%;
+}
+
+.form_button {
+    margin-top: 25px;
+}
+
+.form_button a {
+    padding: 12px 22px;
+    font-size: 14px;
+    background-color: green;
+    color: #fff;
+    display: inline-block;
+}
+
+.billing_address {
+    margin-top: 30px;
+}
+
+.billing_address > p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.billing_address .accordion_form {
+    background-color: #f4edf7;
+    border-radius: 6px;
+}
+
+.billing_address .other-country-checkbox {
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+}
+
+
+
+.check_right {
+    margin-top: 82px;
+}
+
+.shipping-title p {
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 17px;
+    border-bottom: 1px solid lightgray;
+}
+
+.shipping_process .process {
+    display: flex;
+    justify-content: start;
+    margin-top: 8px;
+
+}
+
+.shipping_process .process:last-child{
+    background-color: #d9edf7;
+}
+
+.shipping_process .process img {
+    width: 60px;
+    height: 54px;
+    margin-right: 15px;
+}
+
+.shipping_process .process .desc p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.shipping_process .process .desc span {
+    font-size: 12px;
+}
+
+.payment_process .pay_process {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.payment_process .pay_process label{
+    display: flex;
+    align-items: center;
+}
+.form-check-input:focus {
+    border-color: transparent;
+    outline: 0;
+    box-shadow: none;
+}
+.payment_process .pay_process img {
+    width: 60px;
+    height: 35px;
+    margin: 0 12px 0;
+}
+
+.payment_process .pay_process p {
+    font-size: 12px;
+}
+
+.order_summary {
+    margin-top: 30px;
+}
+
+.order_summary .summary_title p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.pdct_added {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+}
+
+.pdct_added:first-child{
+    border-top: 1px solid lightgray;
+}
+
+.pdct_added .ordered_left {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.pdct_added .ordered_left img {
+    width: 65px;
+}
+
+.pdct_added .ordered_left p {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.pdct_added .ordered_left span {
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(154, 90, 88);
+}
+
+.pdct_added .ordered_left .ordered_desc {
+    margin-left: 20px;
+}
+
+.ordered_right {
+    width: 32%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .ordered_right .quantity span{
+    padding: 5px 10px;
+}
+
+.ordered_right .quantity span i {
+    font-weight: 200;
+}
+
+.ordered_right .quantity input {
+    width: 35px;
+    padding: 1px 10px;
+    background-color: lightgray;
+} */
+
+.ordered_right .remove a {
+    color: #000;
+}
+
+.total_count {
+    margin: 10px 0 40px;
+}
+
+.total_count ul {
+    text-align: end;
+}
+
+.total_count ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.total_count ul li span:first-child {
+    direction: ltr;
+    width: 93%;
+}
+
+.coupon_code .coupon-code-body {
+    text-align: center;
+}
+
+.coupon_code .coupon-code-body input {
+    outline: none;
+    border: 1px solid lightgray;
+    font-size: 13px;
+    padding: 4px 16px;
+}
+
+.coupon_code .coupon-code-body a {
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #7aa93c;
+    padding: 6px 15px;
+    display: inline-block;
+}
+
+.coupon_code .comment p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.coupon_code .comment {
+    margin-top: 30px;
+}
+
+.coupon_code .comment textarea {
+    width: 100%;
+    border: 1px solid #7aa93c;
+    outline: none;
+    padding: 4px;
+}
+
+.coupon_code .comment  span {
+    color: green;
+}
+
+.coupon_code .comment .place_order{
+    margin-top: 50px;
+}
+
+.coupon_code .comment .place_order_btn {
+    text-align: end;
+    margin: 40px 0;
+}
+
+.coupon_code .comment .place_order a {
+    display: inline-block;
+    width: 300px;
+    background-color: #7aa93c;
+    text-align: center;
+    padding: 13px 10px;
+    font-size: 19px;
+    border-radius: 7px;
+    line-height: initial;
+    color: #fff;
+}
+
+.coupon_code .comment .place_order a i {
+    margin-right: 12px;
+}
+
+.place_order .conditions ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 767px) {
+    .pdct_added {
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+
+    .pdct_added .ordered_left{
+        margin-bottom: 5px;
+    }
+
+    .ordered_right {
+        width: 46%;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .ordered_right{
+        width: 100%;
+    }
+}
+
+/* =================================
+    check out page end here
+===================================*/

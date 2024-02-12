@@ -1,0 +1,351 @@
+
+  .list .list-hidden {
+    display: none;
+    overflow: hidden;
+    padding-left: 35px;
+  }
+.n-n-c{
+    padding-left: 20px !important;
+}
+  .list-link:hover .fa,
+  .list-link:hover .fas,
+  .list-link:hover .far,
+  .list-link:hover .fal,
+  .list-link:hover .fad,
+  .list-link:hover .fab {
+    animation: bellshake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    backface-visibility: hidden;
+    transform-origin: top right;
+  }
+  @keyframes bellshake {
+    0% {
+      transform: rotate(0);
+    }
+    15% {
+      transform: rotate(5deg);
+    }
+    30% {
+      transform: rotate(-5deg);
+    }
+    45% {
+      transform: rotate(4deg);
+    }
+    60% {
+      transform: rotate(-4deg);
+    }
+    75% {
+      transform: rotate(2deg);
+    }
+    85% {
+      transform: rotate(-2deg);
+    }
+    92% {
+      transform: rotate(1deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+
+  .list-link {
+    position: relative;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text);
+    text-transform: initial;
+    display: block;
+    margin: 0;
+    text-decoration: none;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    -o-transition: all linear .3s;
+    padding: 8px 0px 8px 18px;
+    font-size: 15px;
+    transition: 0.5s;
+}
+.list-link i{
+    font-size: 22px;
+    margin-right: 10px;
+    transition: 0.5s;
+}
+.list-link:hover i{
+    color: var(--primary);
+}
+.list-link span{
+    transition: 0.5s;
+}
+.list-link:hover span{
+    color: var(--primary);
+}
+.list-link:hover{
+    color: var(--primary);
+    background: linear-gradient(to right,#fff 0,#ccc 100%);
+}
+
+  .link-arrow.up:before {
+    position: absolute;
+    top: 17.6%;
+    right: 18px;
+    content: "\f054";
+    font-size: 10px;
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    -o-transition: all linear .3s;
+  }
+
+  .link-arrow.down:before {
+    position: absolute;
+    top: 20%;
+    right: 18px;
+    content: "\f054";
+    font-size: 10px;
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    -o-transition: all linear .3s;
+  }
+
+  .link-arrow.transition:before {
+    transition: 0.2s all;
+  }
+
+  .link-arrow.rotate:before {
+    transform: rotate(90deg);
+  }
+
+  .link-arrow.rotate-revert:before {
+    transform: rotate(90deg);
+  }
+
+
+
+
+
+.cd-accordion {
+    background: hsl(218, 7%, 32%);
+    background: var(--cd-color-1);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, .1), 0 16px 48px rgba(0, 0, 0, .1), 0 24px 60px rgba(0, 0, 0, .1);
+    box-shadow: var(--shadow-lg)
+}
+
+.cd-accordion--animated .cd-accordion__label::before {
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s
+}
+
+.cd-accordion__sub {
+    display: none;
+    overflow: hidden
+}
+
+.cd-accordion__sub--is-visible {
+    display: block
+}
+
+.cd-accordion__item {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.cd-accordion__input {
+    position: absolute;
+    opacity: 0
+}
+
+.cd-accordion__label {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0.75em 1.25em;
+    padding: var(--space-sm) var(--space-md);
+    background: hsl(218, 7%, 32%);
+    background: var(--cd-color-1);
+    --color-shadow: lightness(hsl(218, 7%, 32%), 1.2);
+    --color-shadow: lightness(var(--cd-color-1), 1.2);
+    box-shadow: inset 0 -1px lightness(hsl(218, 7%, 32%), 1.2);
+    box-shadow: inset 0 -1px var(--color-shadow);
+    color: hsl(0, 0%, 100%);
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.cd-accordion__label span {
+    -ms-flex-order: 3;
+    order: 3
+}
+
+.cd-accordion__label:hover {
+    background: hsl(218, 7%, 35.2%);
+    background: hsl(var(--cd-color-1-h), var(--cd-color-1-s), calc(var(--cd-color-1-l)*1.1))
+}
+
+.cd-accordion__label--icon-folder::before {
+    content: '\203A';
+    font-family: "Font Awesome 5 Free";
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    margin-right: 0.25em;
+    margin-right: var(--space-xxxs);
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.cd-accordion__label--icon-folder::before {
+    -ms-flex-order: 1;
+    order: 1
+}
+
+
+.cd-accordion__label--icon-folder::before {
+    background-position: 0 0;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s
+}
+
+
+.cd-accordion__input:checked+.cd-accordion__label::before {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 10px;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
+}
+
+
+.cd-accordion__input:checked~.cd-accordion__sub {
+    display: block
+}
+
+.cd-accordion__sub--l1 .cd-accordion__label {
+    background: hsl(218, 7%, 20.8%);
+    background: hsl(var(--cd-color-1-h), var(--cd-color-1-s), calc(var(--cd-color-1-l)*0.65));
+    --color-shadow: lightness(hsl(218, 7%, 32%), 0.85);
+    --color-shadow: lightness(var(--cd-color-1), 0.85);
+    box-shadow: inset 0 -1px lightness(hsl(218, 7%, 32%), 0.85);
+    box-shadow: inset 0 -1px var(--color-shadow);
+    padding-left: calc(1.25em + 16px);
+    padding-left: calc(var(--space-md) + 16px)
+}
+
+.cd-accordion__sub--l1 .cd-accordion__label:hover {
+    background: hsl(218, 7%, 24%);
+    background: hsl(var(--cd-color-1-h), var(--cd-color-1-s), calc(var(--cd-color-1-l)*0.75))
+}
+
+.cd-accordion__label{
+    box-shadow: none;
+    padding: 6px 10px 6px 10px;
+    transition: 0.4s;
+}
+.cd-accordion__label:hover{
+    color: var(--primary);
+    background: linear-gradient(to right,#fff 0,#ccc 100%) !important;
+}
+.cd-accordion__sub--l2 .cd-accordion__label {
+    padding-left: calc(1.5em + 32px);
+    padding-left: calc(var(--space-md) + var(--space-xxxs) + 32px)
+}
+.cd-accordion__label span a{
+    color: var(--text) !important;
+    font-size: 14px;
+}
+.cd-accordion__label:hover span a{
+    color: var(--primary) !important;
+}
+.cd-accordion__sub--l3 .cd-accordion__label {
+    padding-left: calc(1.5em + 48px);
+    padding-left: calc(var(--space-md) + var(--space-xxxs) + 48px)
+}
+.list-link {
+    position: relative;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text);
+    text-transform: initial;
+    display: block;
+    margin: 0;
+    text-decoration: none;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    -o-transition: all linear .3s;
+    padding: 8px 0px 8px 18px;
+    font-size: 15px;
+    transition: 0.5s;
+}
+.cd-accordion .fa-angle-right{
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.cd-accordion .fa-angle-right2{
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.cd-accordion .inner-cd-accordion__label{
+    padding: 5px 10px 5px 42px !important;
+}
+
+.cd-accordion .only-text-item{
+    padding: 5px 10px 5px 50px !important;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.cd-accordion .inner-only-text-item{
+    padding: 5px 10px 5px 50px !important;
+}
+.cd-accordion .only-text-item:hover{
+    background: linear-gradient(to right,#fff 0,#ccc 100%) !important;
+}
+.cd-accordion .only-text-item a{
+    color: var(--text);
+    font-size: 14px;
+}
+.cd-accordion .only-text-item:hover a{
+    color: var(--primary);
+}
+.cd-accordion--animated .cd-accordion__label::before {
+    display: none;
+}

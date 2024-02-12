@@ -1,0 +1,698 @@
+.user_profile{
+    position: relative;
+    cursor: pointer;
+    line-height: 49px;
+}
+.user_profile .user_profile_body {
+    display: none;
+    position: absolute;
+    right: -77px;
+    top: 40px;
+    z-index: 9999;
+}
+.user_profile:hover .user_profile_body{
+    display: block;
+}
+.user_profile .user_profile_body ul {
+    background: white;
+    margin-bottom: 5px;
+    padding: 10px 4px 10px 10px;
+    width: 170px;
+    box-shadow: 0px 0px 7px 6px rgba(221, 218, 218, 0.5);
+}
+.user_profile .user_profile_body ul li i{
+    margin-right: 5px;
+}
+.user_profile .user_profile_body ul li {
+    line-height: initial;
+    padding: 7px 5px;
+}
+.user_profile .user_profile_body ul li a{
+    font-size: 16px;
+}
+
+
+.profile-sidebar {
+    width: 100%;
+    margin-left: 1px;
+    /* box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1); */
+}
+.profile-body {
+    width: 100%;
+    padding: 0 1.77%;
+    background-color: #fff;
+}
+.profile-part .main{
+    width: 100%;
+    display: flex;
+}
+.profile-part .table-quantity .add-cart-btn{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    background: transparent;
+    line-height: 35px;
+    border: 1px solid #086e68;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.profile-part .table-quantity .add-cart-btn i{
+    color: #086e68;
+}
+.profile-part .table-quantity .add-cart-btn:hover i{
+    color: white;
+}
+.profile-part .table-quantity .order-now-btn {
+    background: #28B463;
+    color: white;
+    padding: 7px 10px;
+}
+.profile-part .table-quantity .add-cart-btn:hover{
+    background: #086e68;
+    border: 1px solid #086e68;
+}
+.profile-part tbody .table-action a i{
+    transition: 0.5s;
+}
+.profile-part tbody .table-action{
+    transition: 0.5s;
+}
+.profile-part tbody .table-action:hover a i{
+    font-size: large;
+    color: #ff3551;
+}
+.profile-image {
+    text-align: center
+}
+
+.profile-image a {
+    border-radius: 50%;
+    border: 2px solid black
+}
+
+.profile-image a img {
+    width: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--white);
+}
+.profile-part{
+    padding: 50px 0;
+    margin-bottom: 1px;
+    background-color: #fff;
+}
+.profile-btn {
+    margin-top: 33px
+}
+
+.profile-btn a {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 8px;
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--white);
+    background: black;
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    -o-transition: all linear .3s
+}
+
+.profile-btn a:hover {
+    background: var(--green)
+}
+
+@media (max-width: 991px) {
+    .profile-btn {
+        margin-top: 5px
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .profile-image {
+        margin-bottom: 20px
+    }
+}
+
+.profile-card {
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    background: var(--chalk);
+    border: 1px solid var(--border);
+    position: relative;
+    cursor: pointer
+}
+
+.profile-card:hover ul {
+    visibility: visible;
+    opacity: 1
+}
+
+.profile-card h6 {
+    color: var(--text);
+    margin-bottom: 8px;
+    text-transform: capitalize
+}
+
+.profile-card p {
+    text-transform: capitalize
+}
+
+.profile-card ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    -o-transition: all linear .3s
+}
+
+.profile-card ul li {
+    margin: 5px 0px
+}
+
+.profile-card ul li .btn {
+    width: 30px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 6px;
+    text-align: center;
+    display: inline-block;
+    background: var(--white);
+    text-shadow: var(--primary-tshadow);
+    -webkit-box-shadow: var(--primary-bshadow);
+    box-shadow: var(--primary-bshadow);
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    -o-transition: all linear .3s
+}
+
+.profile-card ul .edit {
+    color: var(--green)
+}
+
+.profile-card ul .edit:hover {
+    color: var(--white);
+    background: var(--green)
+}
+
+.profile-card ul .trash {
+    color: var(--red)
+}
+
+.profile-card ul .trash:hover {
+    color: var(--white);
+    background: var(--red)
+}
+
+.profile-card.active {
+    background: var(--green-chalk);
+    border-color: black
+}
+.customer-profile .stars i{
+    color: var(--pink);
+}
+.customer-profile ul{
+    margin-top: 20px;
+}
+.customer-profile .edit-item .btn{
+    border-radius: 0;
+    border: 1px solid var(--pink);
+    background-color: transparent !important;
+    color: var(--pink) !important;
+}
+.customer-profile ul li{
+    border-top: 1px solid lightgray;
+    padding: 40px 0;
+}
+.customer-profile .profile-edit-btn{
+    color: var(--pink);
+}
+.customer-profile input{
+    border-radius: 0;
+    padding: 10px;
+}
+.profile-part .left-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.profile-part .left-side img {
+    border-radius: 50%;
+    border: 4px solid #d8f4e2;
+    overflow: hidden;
+}
+.profile-part .common-side {
+    /* border: 1px solid rgb(212, 212, 212, 0.7); */
+    border-radius: 0px;
+    padding: 10px 20px 30px 20px;
+}
+.profile-part .left-side a{
+    color: var(--text) !important;
+    transition: 0.6s;
+    text-align: center;
+}
+.grand-total-td{
+    padding: 8px 15px !important;
+}
+.profile-part .left-side a:hover{
+    color: #086e68 !important;
+}
+.profile-part .right-side {
+    padding: 10px 10px 10px 10px;
+}
+.profile-part .tab-pane.active {
+    padding-top: 30px;
+}
+.profile-left-side .tab-pane.active {
+    padding-top: 30px;
+}
+.profile-part .orderlist-tab{
+    padding-top: 0 !important;
+}
+.profile-part .wishlist-tab{
+    padding-top: 0 !important;
+}
+.profile-part .wishlist-tab,.orderlist-tab .table-action a i {
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    line-height: unset;
+    margin: 3px;
+}
+.profile-part .wishlist-tab,.orderlist-tab .table-action .icons{
+    justify-content: center;
+}
+.profile-part .right-side .change-pass .user-form .form-group {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+.profile-part .right-side .change-pass .user-form .first-group-child {
+    margin-top: 0px;
+    margin-bottom: 0;
+}
+.profile-part .right-side .change-pass .user-form .form-button .btn {
+    margin-top: 30px;
+}
+.profile-part .right-side .profilz .form-group {
+    margin-bottom: 21px;
+}
+.profile-part .right-side .change-pass .user-form-card {
+    border: none !important;
+    padding-top: 7px !important;
+}
+.profile-part .form-button .btn {
+    width: 136px !important;
+    margin-top: 15px;
+    float: right;
+    border-radius: 4px !important;
+}
+.profile-part .form-button .btn i {
+    color: white;
+}
+.profile-part .product-action input {
+    width: 45px;
+}
+.profile-part .orderlist-details {
+    padding: 25px 15px !important;
+}
+.profile-part .orderlist-details li p {
+    width: 135px;
+    font-size: 14px;
+}
+.profile-part .orderlist-details li h6 {
+    line-height: 24px;
+    font-size: 14px;
+}
+.profile-part .orderlist-deliver h6 {
+    font-size: 15px;
+}
+.profile-part .orderlist-deliver {
+    height: auto !important;
+    padding: 35px 15px;
+}
+.profile-part .orderlist-deliver p {
+    font-size: 14px;
+}
+.profile-part thead tr th {
+    font-size: 14px;
+    padding: 8px 8px;
+    border-radius: 0px !important;
+}
+.text-transform-initial{
+    text-transform: initial !important;
+}
+.profile-part tbody .table-name h6{
+    font-size: 14px;
+}
+.profile-part tbody tr td {
+    padding: 4px 2px !important;
+}
+.profile-part tbody tr .table-shop {
+    padding: 2px 10px !important;
+}
+.profile-part .table-image img {
+    height: 48px;
+}
+.profile-part tbody tr .table-action i{
+    color: black;
+}
+.profile-part .badge{
+    color: white;
+}
+.profile-part .customer-profile .heading {
+    font-weight: 600;
+    font-size: 15px;
+    margin: 10px 0 !important;
+    position: relative;
+}
+.profile-part .customer-profile .heading::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: black;
+}
+/* for changing profile */
+.profile-picz {
+    color: transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    width: 60px;
+    margin-left: 135px;
+    margin-top: 5px;
+}
+  .profile-picz input {
+    display: none;
+  }
+  .profile-part .profilz .choose-img {
+    position: absolute;
+    left: 4%;
+    top: 23px;
+    font-weight: 500;
+}
+  .profile-pic-show{
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .profile-pic-show img{
+    width: 130px;
+    height: 130px;
+  }
+  .profile-picz img {
+    position: absolute;
+    object-fit: cover;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.35);
+    border-radius: 100px;
+    z-index: 0;
+  }
+  .profile-picz .-label {
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+  }
+
+
+.profile-part .right-side .profile-picz img {
+    border-radius: 50%;
+    border: 3px solid #d5d5d5;
+    overflow: hidden;
+}
+.profile-part .profilz .form-control {
+    height: 42px;
+}
+.profile-part .profilz .form-button .btn {
+    width: 27% !important;
+    margin-top: 12px;
+    border-radius: 0px !important;
+}
+.nav-pills .nav-link {
+    border-radius: 0px !important;
+    margin: 0px 0 10px 0;
+    font-size: 18px;
+    color: white;
+}
+.profile-part .nav-pills .nav-link.active {
+    background: black;
+    color: #fff !important;
+}
+.profile-picz .-label{
+    margin-bottom: 0;
+}
+  .profile-picz:hover .-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    color: #fafafa;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 100px;
+  }
+  .profile-picz span {
+    display: inline-flex;
+    font-size: 8px;
+  }
+
+
+.customer-profile.dashboard .card {
+    border-radius: 6px !important;
+    border: 1px solid rgb(210, 210, 210);
+}
+
+.customer-profile.dashboard .card-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    font-size: 26px;
+    gap: 10px;
+    color: white;
+}
+.customer-profile.dashboard .card-body i {
+    color: white !important;
+    margin-right: 0;
+    padding: 5px 6px;
+    border: 1px solid rgb(255, 255, 255, 0.7);
+    border-radius: 4px;
+}
+
+.customer-profile.dashboard .title {
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: right;
+}
+.customer-profile.dashboard .count {
+    font-size: 22px;
+    text-align: right;
+}
+
+.customer-profile.dashboard .point-card{
+    background-color: #D4A200;
+}
+.customer-profile.dashboard .wallet-card{
+    /* background-color: #A35838; */
+    background-color: #994116;
+}
+.customer-profile.dashboard .wishlist-card{
+    /* background-color: #F3B1B5; */
+    background-color: #FF515B;
+}
+
+
+/* profile all table */
+.profile-part .table{
+    margin-top: 30px;
+}
+.profile-part table{
+    width: 100%;
+}
+.profile-part thead>tr{
+    background-color: black;
+    color: white;
+}
+.profile-part thead tr th{
+    text-align: center;
+}
+.profile-part th,td{
+    border: 1px solid #c7ddcf;
+}
+.profile-part thead tr .image-th{
+    width: 120px;
+}
+.profile-part tbody tr td{
+    text-align: center;
+    vertical-align: middle;
+}
+.profile-part tbody tr .stock-out{
+    color: #ff3551;
+}
+.profile-part tbody tr .action a {
+    color: #ffffff;
+    background-color: #088178;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+.profile-part tbody tr .action a i{
+    color: #ffffff;
+    margin-right: 5px;
+}
+.profile-part tbody tr .contact-us a {
+    color: #ffffff;
+    background-color: #41506b;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+.profile-part tbody tr .contact-us a i{
+    color: #ffffff;
+    margin-right: 5px;
+}
+.profile-part tbody tr .remove-btn a i{
+    transition: 0.5s;
+}
+.profile-part tbody tr .remove-btn{
+    transition: 0.5s;
+}
+.profile-part tbody tr .remove-btn:hover a i{
+    font-size: large;
+    color: #ff3551;
+}
+.profile-part tbody .img img{
+    width: 80%;
+    height: 100%;
+}
+.profile-part tbody .img{
+    width: 100px;
+    height: 60px;
+    padding: 5px;
+}
+
+
+/* order */
+.profile-part .order-edit{
+
+}
+
+
+
+
+/* =====wish page start here===== */
+.wish_title {
+    margin-top: 45px;
+    text-align: center;
+}
+
+.wish_img img {
+    width: 100%;
+    border: 1px solid #f9f9f9;
+}
+
+.wish_box .wish_desc {
+    margin: 10px 0 20px;
+}
+
+.wish_box .wish_desc a {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 35px;
+    display: block;
+}
+
+.wish_box .wish_desc a:hover {
+    text-decoration: underline;
+}
+
+.wish_box .wish_desc p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+.wish_btn {
+    text-align: center;
+}
+
+.wish_box .wish_btn a {
+    font-size: 12px;
+    padding: 15px;
+    display: inline-block;
+    color: #fff;
+}
+
+.wish_box .wish_btn a i {
+    margin-right: 4px;
+}
+
+.wish_box .wish_btn a:first-child {
+    color: #fff;
+    background-color: #000;
+}
+
+.wish_box .wish_btn a:last-child {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+.wish_box .wish_btn a:hover a:first-child{
+    border: 1px solid #dc3545;
+    color: #dc3545;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    height: 30px;
+    width: 30px;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: lightgray;
+    color: #222;
+}
+
+.swiper-button-prev:after {
+    content: 'prev';
+    font-size: 24px;
+}
+
+.swiper-button-next:after{
+    content: 'next';
+    font-size: 24px;
+}
+
+
+
+/* =====wish page end here===== */
