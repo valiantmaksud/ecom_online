@@ -42,19 +42,10 @@ class BrandController extends Controller
             'name'          => 'required|unique:brands,name',
         ]);
 
-        try {
+        $data['status'] = 1;
+        $brand = Brand::create($data);
 
-            $data['status'] = 1;
-            $brand = Brand::create($data);
-
-            $this->upload_file($request->image, $brand, 'image', 'brands', 'webp');
-
-
-        } catch (\Throwable $th) {
-
-            return redirect()->back()->withError($th->getMessage());
-
-        }
+        $this->upload_file($request->image, $brand, 'image', 'brands', 'webp');
 
         return redirect()->back()->withMessage('Brand created successfully!');
     }
@@ -75,8 +66,8 @@ class BrandController extends Controller
     {
         
         $subcategories = Brand::query();
-        $data['brands']     = Brand::query()->latest()->paginate();
-        $data['brand']              = Brand::find($id);
+        $data['brands']= Brand::query()->latest()->paginate();
+        $data['brand'] = Brand::find($id);
 
         return view('admin.brands.index', $data);
     }
@@ -90,16 +81,9 @@ class BrandController extends Controller
     */
     public function update(Request $request, Brand $brand)
     {
-        try {
-            $brand->update($request->only('name'));
+        $brand->update($request->only('name'));
             
             $this->upload_file($request->image, $brand, 'image', 'brands', 'webp');
-            
-        } catch (\Throwable $th) {
-
-            return redirect()->back()->withError($th->getMessage());
-
-        }
 
         return redirect()->back()->withMessage('Brand updated successfully!');
     }
@@ -117,16 +101,10 @@ class BrandController extends Controller
     */
     public function destroy(Brand $brand)
     {
-        try {
-            if (file_exists($brand->image)) {
-                unlink($brand->image);
-            }
-            $brand->delete();
-        } catch (\Throwable $th) {
-
-            return redirect()->back()->withError($th->getMessage());
-
+        if (file_exists($brand->image)) {
+            unlink($brand->image);
         }
+        $brand->delete();
 
 
         return redirect()->back()->withMessage('Brand deleted successfully!');

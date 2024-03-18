@@ -43,18 +43,10 @@ class CategoryController extends Controller
             'name'          => 'required|unique:categories,name',
         ]);
 
-        try {
-            $data['status'] = 1;
-            $category = Category::create($data);
+        $data['status'] = 1;
+        $category = Category::create($data);
 
-            $this->upload_file($request->image, $category, 'image', 'categories', 'webp');
-
-
-        } catch (\Throwable $th) {
-
-            return redirect()->back()->withError($th->getMessage());
-
-        }
+        $this->upload_file($request->image, $category, 'image', 'categories', 'webp');
 
         return redirect()->back()->withMessage('Category created successfully!');
     }
@@ -90,16 +82,9 @@ class CategoryController extends Controller
     */
     public function update(Request $request, Category $category)
     {
-        try {
-            $category->update($request->only('name'));
+        $category->update($request->only('name'));
             
-            $this->upload_file($request->image, $category, 'image', 'categories', 'webp');
-            
-        } catch (\Throwable $th) {
-
-            return redirect()->back()->withError($th->getMessage());
-
-        }
+        $this->upload_file($request->image, $category, 'image', 'categories', 'webp');
 
         return redirect()->back()->withMessage('Category updated successfully!');
     }
@@ -117,17 +102,10 @@ class CategoryController extends Controller
     */
     public function destroy(Category $category)
     {
-        try {
-            if (file_exists($category->image)) {
-                unlink($category->image);
-            }
-            $category->delete();
-            cache()->forget('categories');
-        } catch (\Throwable $th) {
-
-            return redirect()->back()->withError($th->getMessage());
-
+        if (file_exists($category->image)) {
+            unlink($category->image);
         }
+        $category->delete();
 
 
         return redirect()->back()->withMessage('Category deleted successfully!');

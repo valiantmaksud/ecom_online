@@ -29,17 +29,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 Route::get('home', [HomeController::class, 'index'])->name('home');
     
     Route::resources([
-        'users'             =>                      UserController::class,
-        'customers'         =>                      UserController::class,
         'categories'        =>                      CategoryController::class,
         'subcategories'      =>                     SubCategoryController::class,
         'brands'            =>                      BrandController::class,
     ]);
-
-    Route::group(['prefix' => 'user-access'], function () {
-
-        Route::get('db-backup',                     [DatabaseBackupController::class, 'db_backup'])->name('db-backup.index');
-        
-    });
 
 });

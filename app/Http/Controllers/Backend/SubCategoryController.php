@@ -46,21 +46,12 @@ class SubCategoryController extends Controller
             'category_id'   => 'required'
         ]);
 
-        try {
+        $data['status'] = 1;
+        $subcategory = SubCategory::create($data);
 
-            $data['status'] = 1;
-            $category = SubCategory::create($data);
+        $this->upload_file($request->image, $subcategory, 'image', 'sub_categories', 'webp');
 
-            $this->upload_file($request->image, $category, 'image', 'sub_categories', 'webp');
-
-
-        } catch (\Throwable $th) {
-
-            return redirect()->back()->withError($th->getMessage());
-
-        }
-
-        return redirect()->back()->withMessage('Category created successfully!');
+        return redirect()->back()->withMessage('Sub Category created successfully!');
     }
 
 
@@ -93,18 +84,12 @@ class SubCategoryController extends Controller
      | UPDATE METHOD
      |--------------------------------------------------------------------------
     */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
-        try {
-            $category->update($request->only('name'));
+        $subCategory = SubCategory::find($id);
+        $subCategory->update($request->only('name', 'category_id'));
             
-            $this->upload_file($request->image, $category, 'image', 'sub_categories', 'webp');
-            
-        } catch (\Throwable $th) {
-
-            return redirect()->back()->withError($th->getMessage());
-
-        }
+        $this->upload_file($request->image, $subCategory, 'image', 'sub_categories', 'webp');
 
         return redirect()->back()->withMessage('Category updated successfully!');
     }
@@ -120,21 +105,15 @@ class SubCategoryController extends Controller
      | DELETE/DESTROY METHOD
      |--------------------------------------------------------------------------
     */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        try {
-            if (file_exists($category->image)) {
-                unlink($category->image);
-            }
-            $category->delete();
-            cache()->forget('sub_categories');
-        } catch (\Throwable $th) {
-
-            return redirect()->back()->withError($th->getMessage());
-
+        $subCategory = SubCategory::find($id);
+        if (file_exists($subCategory->image)) {
+            unlink($subCategory->image);
         }
+        $subCategory->delete();
 
 
-        return redirect()->back()->withMessage('Category deleted successfully!');
+        return redirect()->back()->withMessage('Sub Category deleted successfully!');
     }
 }
