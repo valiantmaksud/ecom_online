@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\DatabaseBackupController;
+use App\Http\Controllers\Backend\ProductController;
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
@@ -32,6 +33,7 @@ Route::get('home', [HomeController::class, 'index'])->name('home');
         'categories'        =>                      CategoryController::class,
         'subcategories'      =>                     SubCategoryController::class,
         'brands'            =>                      BrandController::class,
+        'products'          =>                      ProductController::class,
     ]);
 
 });

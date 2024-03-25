@@ -2,13 +2,9 @@
 
 namespace App\Models;
 
-use App\Traits\AutoCreatedUpdatedWithSlug;
-use Illuminate\Support\Arr;
 
 class Product extends Model
 {
-    use AutoCreatedUpdatedWithSlug;
-
 
 
     public function scopeNameFiltering()
@@ -23,6 +19,11 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function subcategory()
+    {
+        return $this->belongsTo(SubCategory::class);
     }
 
 }
