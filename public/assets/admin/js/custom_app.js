@@ -17,7 +17,6 @@ $('select').each(function() {
 
 
 $(".select2").select2({
-    tags: "true",
     theme:'bootstrap-5',
     placeholder: "Select an option",
     allowClear: true
