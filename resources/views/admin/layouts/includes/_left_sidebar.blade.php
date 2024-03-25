@@ -86,6 +86,11 @@
                                 <span class="menu-item" data-key="t-multi-level">Brands</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.products.index') }}">
+                                <span class="menu-item" data-key="t-multi-level">Products</span>
+                            </a>
+                        </li>
                         
                     </ul>
 
