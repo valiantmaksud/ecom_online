@@ -62,6 +62,30 @@
                     </a>
 
                 </li>
+
+                <!-------------- Product Config Module --------->
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i class="icon nav-icon fab fa-product-hunt"></i>
+                        <span class="menu-item" data-key="t-multi-level">Products</span>
+                    </a>
+
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li>
+                            <a href="{{ route('admin.products.index') }}">
+                                <span class="menu-item" data-key="t-multi-level">List</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.products.create') }}">
+                                <span class="menu-item" data-key="t-multi-level">Add New</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+
+                </li>
+                <!-------------- Product Module --------->
            
                 <!-------------- Product Config Module --------->
                 <li>
@@ -84,11 +108,6 @@
                         <li>
                             <a href="{{ route('admin.brands.index') }}">
                                 <span class="menu-item" data-key="t-multi-level">Brands</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.products.index') }}">
-                                <span class="menu-item" data-key="t-multi-level">Products</span>
                             </a>
                         </li>
                         
