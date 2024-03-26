@@ -11,6 +11,7 @@
                             <tr>
                                 <th>Sl</th>
                                 <th>Name</th>
+                                <th>Image</th>
                                 <th>Category</th>
                                 <th>Subcategory</th>
                                 <th class="text-right">Product Price</th>
@@ -31,6 +32,7 @@
                                         <p>{{ $item->name }}</p>
                                         <span><b>Created At:</b> {{ $item->created_at->format('Y-m-d h:i A') }}</span>
                                     </td>
+                                    <td> <img src="{{ asset($item->image) }}" alt="{{ $item->name }}" width="80px" height="80px"></td>
                                     <td>{{ optional($item->category)->name }}</td>
                                     <td>{{ optional($item->subcategory)->name }}</td>
                                     <td class="text-right">
@@ -40,7 +42,7 @@
                                         {{ number_format($item->selling_price, 2) }}
                                     </td>
                                     <td class="text-right">
-                                        {{ number_format($item->discount, 2) }}
+                                        {{ number_format($item->discount_price, 2) }}
                                     </td>
                                     <td class="text-right">
                                         {{ number_format($item->final_price, 2) }}
@@ -51,11 +53,6 @@
                                     <td class="text-center">
     
                                         <div class="btn-group btn-corner">
-    
-                                            {{-- <a href="{{ route('product.show', $item->slug) }}" target="_blank"
-                                                class="btn btn-sm btn-outline-primary">
-                                                <i class="fas fa-eye"></i>
-                                            </a> --}}
                                             <a href="{{ route('admin.products.edit', $item->id) }}"
                                                 class="btn btn-sm btn-outline-info">
                                                 <i class="fa fa-edit"></i>

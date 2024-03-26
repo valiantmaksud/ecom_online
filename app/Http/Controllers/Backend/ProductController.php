@@ -60,6 +60,7 @@ class ProductController extends Controller
             'selling_price'=> 'required',
             'discount_price'=> 'required',
             'final_price'=> 'required',
+            'status'=> 'required'
         ]);
         if (empty($request->slug)) {
             $data['slug'] = Str::slug($request->name) .'-'. Product::max('id') + 1;
@@ -119,6 +120,7 @@ class ProductController extends Controller
             'selling_price'=> 'required',
             'discount_price'=> 'required',
             'final_price'=> 'required',
+            'status'=> 'required'
         ]);
         if (empty($request->slug)) {
             $data['slug'] = Str::slug($request->name) .'-'. Product::max('id') + 1;
