@@ -11,16 +11,10 @@
             </div>
             <div class="ordered_desc">
                 <p>{{ optional($item->product)->name }}</p>
-                <span>BDT {{ number_format($item->price) }}</span>
+                <span>BDT {{ number_format($item->amount) }}</span>
             </div>
         </div>
-        <div class="text-center">
-            <select name="size_ids[]" class="form-controls select2 address_portion">
-                @foreach (optional($item->product)->product_sizes as $size)
-                    <option value="{{ $size->id }}">{{ $size->name }}</option>
-                @endforeach
-            </select>
-        </div>
+        
         <div class="ordered_right">
             <div class="count">
                 <div class="quantity">
@@ -34,7 +28,7 @@
                 </div>
             </div>
             <div class="price">
-                <p>BDT {{ number_format($item->amount) }}</p>
+                <p>BDT {{ number_format($item->amount * $item->quantity) }}</p>
             </div>
             <div class="remove">
                 <a href="javascript:void(0)" onclick="removeFromCart(`{{ $item->id }}`)"><i class="fas fa-trash-alt"></i></a>

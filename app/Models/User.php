@@ -68,7 +68,7 @@ class User extends Authenticatable
 
     public function delivery_address()
     {
-        return $this->hasOne(DeliveryAddress::class, 'user_id')->where('status', 1);
+        return $this->hasOne(Address::class, 'user_id');
     }
 
     public function orders()

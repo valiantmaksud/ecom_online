@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                         <div class="footer_content">
-                            <h4>{{ website_settings()->where('key', 'site_title')->first()->value ?? company()->name }}™</h4>
+                            <h4>{{ website_settings()->where('key', 'site_title')->first()->value ?? "" }}™</h4>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-6 mb-4 width-50">
@@ -57,7 +57,7 @@
                                 </a>
                                 {{-- <i class="fab fa-pinterest-p"></i> --}}
                             </div>
-                            <a class="mail-to" href="mailto:{{ company()->email }}">{{ company()->email }}</a>
+                            <a class="mail-to" href="mailto@"></a>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
     <div class="copyright">
         <div class="container">
             <div class="copyright_inner">
-                <p>© {{ date('Y') }} {{ website_setting('site_title') ?? company()->name }}. All Rights Reserved</p>
+                <p>© {{ date('Y') }} {{ website_setting('site_title') ?? "" }}. All Rights Reserved</p>
             </div>
         </div>
     </div>
@@ -112,18 +112,13 @@
             </form>
         </div>
 
-      <!-------- Wishlist Tab -------->
-      <div class="tab {{ request()->routeIs('frontend.profile.wishlist') ? 'active' : '' }}" onclick="location.href = '{{ route('frontend.profile.wishlist') }}'" style="--color: #e63946; --bgcolor: #e6394633">
-        <svg><use xlink:href="#icon-like" class="icon" /></svg>
-        <label>Wishlist</label>
-      </div>
 
       <!-------- Profile Tab -------->
-      <div class="tab account-btn {{ request()->routeIs('frontend.profile.account') ? 'active' : '' }}" onclick="location.href = '{{ route('frontend.profile.account') }}'" style="--color: #02c39a; --bgcolor: #02c39a33">
+      {{-- <div class="tab account-btn {{ request()->routeIs('frontend.profile.account') ? 'active' : '' }}" onclick="location.href = '{{ route('frontend.profile.account') }}'" style="--color: #02c39a; --bgcolor: #02c39a33">
         <svg><use xlink:href="#icon-user" class="icon" /></svg>
         <label>My Account</label>
       </div>
-    </div>
+    </div> --}}
 </div>
 <!--================================================
 	MOBILE BOTTOM NAVIGATION TAB BAR SECTION END

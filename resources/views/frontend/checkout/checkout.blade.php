@@ -17,9 +17,8 @@
                                     <p>Complete the following fields to place your order.</p>
                                 </div>
                                 
-                                @include('frontend.checkout.includes.delivery-address')
 
-                                @include('frontend.checkout.includes.billing-address')
+                                @include('frontend.checkout.includes.delivery-address')
                                 
                                 
                             </div>
@@ -105,13 +104,11 @@
                                     <div class="ordered_pdct">
                                         <div class="order-page-cart-items"></div>
                                         <div class="total_count">
-                                            <input type="hidden" name="coupon_id" value="" id="coupon_id">
                                             <input type="hidden" name="shipping_id" value="" id="shipping_id">
                                             <input type="hidden" name="shipping_cost" value="70" class="shipping-cost-input">
                                             <ul>
                                                 <li><span>Subtotal :</span> <span class="checkout-total-cart-amount">{{ optional(auth()->user()->cart)->total_price ?? 0 }}/=</span></li>
                                                 <li><span>Shipping (+):</span> <span class="shipping-cost">70</span>/=</li>
-                                                <li><span>Coupon Discount (-):</span> <span class="coupon-cost">0.00</span>/= </li>
                                                 <li><span><strong>TOTAL :</strong></span>
                                                     <span><strong class="checkout-total-price">{{ optional(auth()->user()->cart)->total_price + 70 ?? 0 }}</strong>/=</span>
                                                 </li>
@@ -120,10 +117,10 @@
                                     </div>
                                 </div>
                                 <div class="coupon_code">
-                                    <div class="coupon-code-body">
+                                    {{-- <div class="coupon-code-body">
                                         <input type="text" placeholder="Coupon Code" name="coupon_code" id="coupon_code">
                                         <a href="javascript:void(0)" onclick="checkCoupon(this)">ADD</a>
-                                    </div>
+                                    </div> --}}
                                     <div class="comment">
                                         <p>If you would like to add any notes or comments about your order please enter
                                             them below.</p>

@@ -30,13 +30,13 @@
                                         alt="{{ $product->name }}">
                                 </div>
 
-                                <div class="thumbnail-border">
+                                {{-- <div class="thumbnail-border">
                                     <div class="small-img">
                                         <img src="{{ asset('icon_right.png') }}" class="icon-left" alt=""
                                             id="prev-img">
                                         <div class="small-container">
                                             <div id="small-img-roll">
-                                                @foreach ($product->images as $image)
+                                                @foreach ($product->images ?? [] as $image)
                                                     @if (file_exists($image->image))
                                                         <img src="{{ asset($image->image) }}" class="show-small-img"
                                                             alt="thumbnail">
@@ -47,7 +47,7 @@
                                         <img src="{{ asset('icon_right.png') }}" class="icon-right" alt=""
                                             id="next-img">
                                     </div>
-                                </div>
+                                </div> --}}
 
                             </div>
                         </div>
@@ -57,24 +57,17 @@
                             <div class="product_order product_info">
                                 <div class="order_title">
                                     <p>Category: {{ optional($product->category)->name }}</p>
-                                    <div class="order_review">
-                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                            class="fas fa-star"></i>
-                                        <span>(1 review)</span>
-                                    </div>
                                 </div>
                                 <div class="order_title2">
                                     <p>{{ $product->name }}</p>
-                                    @if ($product->offer_price)
-                                        <del><span class="text-danger">৳{{ $product->price }}</span></del>
-                                        <span style="font-size:20px">৳{{ $product->offer_price }}</span>
+                                    @if ($product->discount_price)
+                                        <del><span class="text-danger">৳{{ $product->selling_price }}</span></del>
+                                        <span style="font-size:20px">৳{{ $product->discount_price }}</span>
                                     @else
-                                        <span>৳{{ $product->price }}</span>
+                                        <span>৳{{ $product->selling_price }}</span>
                                     @endif
 
                                 </div>
-                                <x-frontend.size-selection-details :sizes="$product->product_sizes" :productid="$product->id" />
 
                                 <div class="order_cart">
                                     <div class="quantity">
@@ -96,17 +89,14 @@
                                 </div>
 
 
-                                <div class="product_info">
-                                    {!! $product->short_description !!}
-                                </div>
+                                {{-- <div class="product_info">
+                                    {!! $product->description !!}
+                                </div> --}}
                             </div>
-                            <div class="product_tab">
+                            <div class="product_tab mt-5">
                                 <ul class="tabs">
                                     <li data-tab-target="#home" class="active tab">Details</li>
                                     <li data-tab-target="#pricing" class="tab">Share</li>
-                                    <li data-tab-target="#video" class="tab">Video</li>
-                                    <li data-tab-target="#chat" class="tab">Chat</li>
-                                    <li data-tab-target="#news" class="tab">Review</li>
                                 </ul>
 
                                 <div class="tab-content">
@@ -126,41 +116,8 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div id="video" data-tab-content class="mb-3">
-
-                                        @if ($product->video_link)
-                                            <iframe width="380" height="280"
-                                                src="https://www.youtube.com/embed/{{ $product->video_link }}"
-                                                title="{{ $product->name }}" frameborder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                allowfullscreen></iframe>
-                                        @endif
-                                    </div>
-                                    <div id="chat" data-tab-content>
-                                        @guest
-                                            <div class="review_btn">
-                                                <div class="button_sec">
-                                                    <a href="{{ route('frontend.auth.login') }}">LOGIN</a>
-                                                </div>
-                                            </div>
-                                        @endguest
-                                        @auth
-                                            <div class="input-group mt-3">
-                                                <textarea name="message" id="message" class="form-control input-sm"></textarea>
-                                                <span class="input-group-text">Send</span>
-                                          </div>
-                                        @endauth
-                                    </div>
-                                    <div id="news" data-tab-content>
-                                        @guest
-                                            <div class="review_btn">
-                                                <div class="button_sec">
-                                                    <a href="{{ route('frontend.auth.login') }}">LOGIN</a>
-                                                </div>
-                                            </div>
-                                        @endguest
-                                        <span class="text-danger">No review found !</span>
-                                    </div>
+                                    
+                                    
 
                                 </div>
                             </div>

@@ -12,20 +12,19 @@
         {{-- <p>Best Seller</p> --}}
     </div>
     <div class="product_det">
-        <div class="review">
+        {{-- <div class="review">
             <i class="fas fa-star"></i><i class="fas fa-star">
             </i><i class="fas fa-star"></i><i class="fas fa-star">
             </i><i class="fas fa-star"></i> <a class="view" href="#">(1 reviews)</a>
-        </div>
+        </div> --}}
         <a href="{{ route('product.show', $item->slug) }}"class="parent">
             {{ Str::limit($item->name, 32, '...') }}
         </a>
         {{-- <a href="{{ route('product.show', $item->slug) }}">{!! Str::words($item->description, 10, '...') !!}</a> --}}
         <P class="child">
-            <span>{{ $item->price }}৳</span> {{ $item->offer_price }}৳
+            <span>{{ $item->selling_price }}৳</span> {{ $item->final_price }}৳
         </P>
     </div>
-    <x-frontend.size-selection :sizes="$item->product_sizes" :productid="$item->id" />
     <div class="product_cart">
         <button class="btn add-to-cart-btn" type="button" data-product-id="{{ $item->id }}">
             {{-- <button class="btn add-to-cart-btn" type="button" onclick="addToCart(`{{ $item->id }}`)"> --}}

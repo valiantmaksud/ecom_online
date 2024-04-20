@@ -24,7 +24,7 @@
                             <img src="{{ asset('icon_right.png') }}" class="icon-left" alt="" id="prev-img">
                             <div class="small-container">
                             <div id="small-img-roll">
-                                @foreach ($product->images as $item)
+                                @foreach ($product->images ?? [] as $item)
                                     @if (file_exists($item->image))
                                         <img src="{{ asset($item->image) }}" class="show-small-img" alt="thumbnail">
                                     @endif
@@ -46,10 +46,9 @@
                             {!! $product->description ?? $product->summery !!}
                         </p>
                         <div class="product-price d-flex">
-                            <del>৳{{ number_format($product->price) }}</del>
-                            <b>৳{{ number_format($product->offer_price) }}</b>
+                            <del>৳{{ number_format($product->selling_price) }}</del>
+                            <b>৳{{ number_format($product->final_price) }}</b>
                         </div>
-                        <x-frontend.size-selection :sizes="$product->product_sizes" :productid="$product->id" />
                         <div class="order_cart">
                             <div class="quantity">
                                 <a href="javascript:void(0)" class="quantity_minus"><span><i class="fas fa-minus"></i></span></a>

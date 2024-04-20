@@ -63,6 +63,14 @@
 
                 </li>
 
+                <li>
+                    <a href="{{ route('admin.orders.index') }}">
+                        <i class="icon nav-icon fab fa-product-hunt"></i>
+                        <span class="menu-item" data-key="t-multi-level">Orders</span>
+                    </a>
+    
+                </li>
+
                 <!-------------- Product Config Module --------->
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
@@ -116,7 +124,60 @@
                 </li>
                 <!-------------- Product Module --------->
 
-             
+             <!-------------- Banner --------->
+             <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                    <i class="icon nav-icon fab fa-product-hunt"></i>
+                    <span class="menu-item" data-key="t-multi-level">Banners</span>
+                </a>
+
+                <ul class="sub-menu" aria-expanded="true">
+                    <li>
+                        <a href="{{ route('admin.banners.index') }}">
+                            <span class="menu-item" data-key="t-multi-level">List</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.banners.create') }}">
+                            <span class="menu-item" data-key="t-multi-level">Add New</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+            </li>
+            <!-------------- Banner --------->
+            <li>
+                <a href="{{ route('admin.customers.index') }}">
+                    <i class="icon nav-icon fab fa-product-hunt"></i>
+                    <span class="menu-item" data-key="t-multi-level">Customers</span>
+                </a>
+
+            </li>
+
+            <!-------------- Report --------->
+            <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                    <i class="icon nav-icon fab fa-product-hunt"></i>
+                    <span class="menu-item" data-key="t-multi-level">Reports</span>
+                </a>
+
+                <ul class="sub-menu" aria-expanded="true">
+                    <li>
+                        <a href="{{ route('admin.financial-report.index') }}">
+                            <span class="menu-item" data-key="t-multi-level">Sell Report</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.financial-report.index') }}">
+                            <span class="menu-item" data-key="t-multi-level">Financial Report</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+            </li>
+            <!-------------- Report --------->
 
 
 

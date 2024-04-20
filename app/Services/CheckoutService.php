@@ -2,12 +2,10 @@
 
 namespace App\Services;
 
-use App\Mail\DynamicEmail;
+use App\Models\Address;
 use App\Models\Cart;
-use App\Models\DeliveryAddress;
 use App\Models\EmailConfiguration;
 use App\Models\Order;
-use Illuminate\Support\Facades\Mail;
 
 class CheckoutService
 {
@@ -24,29 +22,28 @@ class CheckoutService
 
 
     public function order($request)
-    {        
-        $this->invoice_number->setNextInvoiceNo(1, 'order', date('Y'));
-
+    {
         $this->order = Order::create([
             'user_id'               => auth()->user()->id,
-            'delivery_address_id'   => $this->createOrUpdateDeliveryAddress($request),
-            'coupon_id'             => $request->coupon_id,
+            'delivery_address'      => $this->createOrUpdateDeliveryAddress($request),
             'date'                  => date('Y-m-d'),
-            'order_number'          => $this->invoice_number->getInvoiceNumber('order'),
-            'payment_method'        => $request->payment_method,
-            'payment_status'        => 'pending',
-            'status'                => 'pending',
-            'subtotal'              => $request->subtotal ?? 0,
-            'shipping_cost'         => $request->shipping_cost ?? 0,
+            'order_id'              => $this->invoice_number->getInvoiceNumber('order'),
+            'payment_type'          => $request->payment_method,
+            'payment_status'        => 0,
+            'order_status'          => 0,
+            'payable_amount'        => $request->subtotal ?? 0,
+            'discount_amount'       => 0,
             'coupon_cost'           => $request->coupon_cost ?? 0,
             'paid_amount'           => $request->paid_amount ?? 0,
-            'notes'                 => $request->notes,
+            'order_note'            => $request->notes,
         ]);
+
         return $this->order;
     }
 
 
 
+    // ALTER TABLE `order_details` ADD `quantity` INT NOT NULL AFTER `product_id`, ADD `price` DOUBLE(8,2) NOT NULL AFTER `quantity`;
 
     public function order_details($request)
     {
@@ -55,11 +52,12 @@ class CheckoutService
         foreach ($cart->details ?? [] as $cart_item) {
             $this->order->orderDetails()->create([
                 'product_id'    => $cart_item->product_id,
-                'size_id'       => $cart_item->size_id,
-                'attribute_id'  => $request->attribute_id,
                 'quantity'      => $cart_item->quantity,
-                'price'         => $cart_item->price,
+                'price'         => $cart_item->amount,
+                'order_status'  => 0
             ]);
+            $cart_item->delete();
+
         }
         
         $cart->delete();
@@ -73,7 +71,6 @@ class CheckoutService
 
         $this->order->update([
             'subtotal'              => $this->order->orderDetails->sum('total'),
-            // 'shiping_cost'          => request('shipping_cost') ?? 70,
             'coupon_cost'           => $this->getCouponAmount(),
             'paid_amount'           => 0,
         ]);
@@ -106,20 +103,14 @@ class CheckoutService
     public function createOrUpdateDeliveryAddress($request)
     {
 
-        return DeliveryAddress::updateOrCreate([
-            'user_id'       => auth()->user()->id,
+        return Address::updateOrCreate([
+            'user_id'       => auth()->id(),
         ], [
-            'first_name'    => $request->first_name,
-            'last_name'     => $request->last_name,
-            'email'         => $request->email,
-            'phone'         => $request->phone,
-            'address'       => $request->address,
-            'city'          => $request->city,
-            'state'         => $request->state,
-            'country'       => $request->country ?? 'Bangladesh',
-            'district_id'   => $request->district_id,
-            'thana_id'      => $request->thana_id,
-            'postal_code'   => $request->postal_code,
+            'division'      => $request->division,
+            'district'      => $request->district,
+            'thana'         => $request->thana,
+            'area'          => $request->address,
+            'phone'         => $request->phone
         ])->id;
     }
 

@@ -17,27 +17,30 @@
                             {{-- <form> --}}
 
                             <div class="row mb-3">
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <div class="form_portion">
-                                        <label for="fname">First Name</label> <br>
+                                        <label for="fname">Name</label> <br>
                                         <input type="text" class="form-control" id="first_name" name="first_name"
-                                            value="{{ optional(auth()->user()->delivery_address)->first_name }}">
+                                            value="{{ auth()->user()->name }}">
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form_portion">
-                                        <label for="lname">Last Name</label> <br>
-                                        <input type="text" class="form-control" id="last_name" name="last_name"
-                                            value="{{ optional(auth()->user()->delivery_address)->last_name }}">
-                                    </div>
-                                </div>
+                            
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-lg-12">
                                     <label for="address">Address</label> <br>
                                     <textarea class="address_portion form-control" id="address" name="address" id="" cols="2"
-                                        rows="2">{{ optional(auth()->user()->delivery_address)->address }}</textarea>
+                                        rows="2">{{ old('address', optional(auth()->user()->delivery_address)->address) }}</textarea>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-12">
+                                    <label class="address_portion" for="district">Division</label>
+                                    <br>
+                                    <input type="text" class="form-control" id="division" name="division"
+                                            value="{{ old('division', auth()->user()->delivery_address?->division) }}">
+                                    
                                 </div>
                             </div>
 
@@ -45,37 +48,30 @@
                                 <div class="col-lg-12">
                                     <label class="address_portion" for="district">District</label>
                                     <br>
-                                    {{-- @dd(optional(auth()->user()->delivery_address)->district_id) --}}
-                                    <select class="address_portion form-control select2" id="district_id"
-                                        name="district_id" data-placeholder="--District--"
-                                        data-selected="{{ optional(auth()->user()->delivery_address)->district_id }}">
-                                        @foreach (districts() as $item)
-                                            <option value="{{ $item->id }}" data-shipping-cost="{{ $item->id == 58 ? 70 : 120 }}">{{ $item->name }}</option>
-                                        @endforeach
-                                    </select>
+                                    <input type="text" class="form-control" id="district" name="district"
+                                            value="{{ old('district', auth()->user()->delivery_address?->district) }}">
+                                    
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col-lg-12">
-                                    <label class="address_portion" for="district">Thana</label>
+                                    <label class="address_portion" for="thana">Thana</label>
                                     <br>
-                                    <select class="address_portion form-control select2" id="thana_id" name="thana_id"
-                                        data-placeholder="--Thana--"
-                                        data-selected="{{ optional(auth()->user()->delivery_address)->thana_id }}">
-                                        @foreach (thanas() as $item)
-                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                        @endforeach
-                                    </select>
+                                    <input type="text" class="form-control" id="thana" name="thana"
+                                            value="{{ old('thana', auth()->user()->delivery_address?->thana) }}">
+                                    
                                 </div>
                             </div>
+
+                            
 
                             <div class="row">
                                 <div class="col-lg-12">
                                     <label for="number">Phone Number</label> <br>
                                     <input class="address_portion form-control" type="text" placeholder="+880"
                                         id="phone" name="phone"
-                                        value="{{ optional(auth()->user()->delivery_address)->phone }}">
+                                        value="{{ old('phone', optional(auth()->user()->delivery_address)->phone) }}">
                                 </div>
                             </div>
 

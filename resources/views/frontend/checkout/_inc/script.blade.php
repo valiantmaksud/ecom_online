@@ -2,11 +2,11 @@
     const submitBtn     = document.getElementById('submit-btn');
     const tosCheckbox   = document.getElementById('tos');
     const firstName     = document.getElementById('first_name');
-    const lastName      = document.getElementById('last_name');
     const email         = document.getElementById('email');
     const address       = document.getElementById('address');
-    const district      = document.getElementById('district_id');
-    const thana         = document.getElementById('thana_id');
+    const district      = document.getElementById('district');
+    const thana         = document.getElementById('thana');
+    const division      = document.getElementById('division');
     const phone         = document.getElementById('phone');
 
 
@@ -25,10 +25,6 @@
         
         if (firstName.value == '') {
             showToastr('Please enter first name');
-            return false;
-        }
-        if (lastName.value == '') {
-            showToastr('Please enter last name');
             return false;
         }
         
@@ -80,7 +76,7 @@
         }
 
         let options = {
-            url: '{{ route('user-coupon') }}',
+            url: '/',
             method: 'POST',
             params: {
                 _token: '{{ csrf_token() }}',

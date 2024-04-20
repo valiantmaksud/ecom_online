@@ -2,6 +2,7 @@
 
 namespace App\View\Components\frontend;
 
+use App\Models\Product;
 use Illuminate\View\Component;
 
 class TopSellingProduct extends Component
@@ -23,6 +24,7 @@ class TopSellingProduct extends Component
      */
     public function render()
     {
-        return view('components.frontend.top-selling-product');
+        $data['products'] = Product::query()->where('status', 1)->latest()->take(20)->get();
+        return view('components.frontend.top-selling-product', $data);
     }
 }

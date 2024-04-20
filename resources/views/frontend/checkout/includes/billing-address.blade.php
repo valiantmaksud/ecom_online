@@ -47,9 +47,9 @@
                 <div class="col-lg-12">
                     <label class="address_portion" for="city">City</label> <br>
                     <select class="address_portion" id="billing_city_id">
-                        @foreach (districts() as $item)
+                        {{-- @foreach (districts() as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
-                        @endforeach
+                        @endforeach --}}
                     </select>
                 </div>
             </div>

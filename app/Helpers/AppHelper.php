@@ -12,3 +12,18 @@ use App\Models\WebsiteSetting;
 use Illuminate\Support\Facades\Cache;
 
 
+function category() {
+    return [];
+}
+
+function website_settings() {
+    return collect([]);
+}
+
+function top_selling_product() {
+    return [];
+}
+
+function website_setting() {
+    return "";
+}

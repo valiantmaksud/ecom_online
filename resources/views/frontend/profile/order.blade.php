@@ -34,7 +34,7 @@
                                             <tbody>
                                                 @forelse (optional(auth()->user())->orders ?? [] as $item)
                                                     <tr>
-                                                        <td class="table-serial" style="width:15%">{{ $item->order_number }}</td>
+                                                        <td class="table-serial" style="width:15%">{{ $item->order_id }}</td>
                                                         <td class="table-name" style="width:8%">
                                                             <h6>{{ $item->date }}</h6>
                                                         </td>
@@ -42,13 +42,17 @@
                                                             <h6><span class="mt-2" style="color:black"></span>{{ number_format($item->total, 2) }}</h6>
                                                         </td>
                                                         <td class="order-status" style="width:10%">
-                                                            <span class="badge bg-secondary">{{ $item->status }} </span>
-                                                            {{-- <span class="badge bg-info"> Accepted </span>
-                                                            <span class="badge bg-primary"> Processing </span>
-                                                            <span class="badge bg-success"> On the way </span>
-                                                            <span class="badge bg-warning"> Delivered </span>
-                                                            <span class="badge bg-danger"> Cancelled </span>
-                                                            <span class="badge bg-dark">Default</span> --}}
+                                                            <span class="badge bg-secondary">
+                                                                @if ($item->order_status == 0)
+                                                                    Pending
+                                                                @elseif ($item->order_status == 1)
+                                                                    Processing
+                                                                @elseif ($item->order_status == 2)
+                                                                    Deliveried
+                                                                @elseif ($item->order_status == 3)
+                                                                    Returned
+                                                                @endif
+                                                            </span>
                                                         </td>
                                                         <td> <p><span class="mt-2" style="color:black">{{ strtoupper($item->payment_method) }}</span></p></td>
                                                         <td>

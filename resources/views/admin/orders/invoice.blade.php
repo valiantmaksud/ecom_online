@@ -259,7 +259,7 @@
                                     </div>
                                     <p>Name &nbsp&nbsp&nbsp&nbsp: {{ optional($order->customer)->name }}</p>
                                     <p>Mobile &nbsp&nbsp: {{ optional($order->customer)->phone }}</p>
-                                    <p>Address : {{ optional($order->deliveryAddress)->address }}</p>
+                                    <p>Address : {{ optional($order->deliveryAddress)->area }}</p>
                                     <p>District &nbsp&nbsp&nbsp&nbsp&nbsp: {{ optional(optional($order->customer)->delivery_address)->district }} | Thana : {{ optional(optional($order->customer)->delivery_address)->thana }}</p>
                                 </div>
                                 <div class="col-6 date">
@@ -291,7 +291,7 @@
                         <div class="text-center">
                             <p style="font-size: 20px;"> Sales Invoice </p>
                             <p > Order No : {{ $order->order_id }}</p>
-                            <img class="barcode-img pt-1" src="data:image/png;base64,{{ DNS1D::getBarcodePNG($order->order_number ?? 123456, "C128") }}" alt="barcode" />
+                            <img class="barcode-img pt-1" src="data:image/png;base64,{{ DNS1D::getBarcodePNG($order->order_id ?? 123456, "C128") }}" alt="barcode" />
                         </div>
 
                         <div class="product-info">
@@ -300,7 +300,6 @@
                                     <tr>
                                         <th>SL</th>
                                         <th class="text-left">Item Details</th>
-                                        
                                         <th>Qty</th>
                                         <th>Rate</th>
                                         <th>Discount</th>
@@ -330,7 +329,6 @@
                                             <td style="line-height: 16px">
                                                 <p>{{ optional($detail->product)->name }}</p>
                                             </td>
-                                            
                                             <td class="text-center">{{ $detail->quantity }}</td>
                                             <td class="text-center">{{ number_format($detail->price, 2, '.', '') }}</td>
                                             <td class="text-center">{{ number_format($detail->total, 2, '.', '') }}</td>
@@ -371,7 +369,7 @@
                                         </div>
                                         <div class="right-side">
                                             <p>{{ number_format($order->shipping_cost, 2, '.', '') }}</p>
-                                            <p>(-) {{ number_format(0, 2, '.', '') }}</p>
+                                            <p>(-) {{ number_format($order->coupon_cost, 2, '.', '') }}</p>
                                         </div>
                                     </div>
                                     ------------
@@ -441,9 +439,9 @@
                                         {{-- <p>Tax Invoice (Mushak 6.3)</p> --}}
                                     </div>
                                     <div class="company-info-invoice">
-                                        <p style="font-size: 18px">{{ optional($company)->name }}</p>
+                                        {{-- <p style="font-size: 18px">{{ optional($company)->name }}</p>
                                         <p>{{ optional($company)->address }}</p>
-                                        <p>Call: {{ optional($company)->hotline }}</p>
+                                        <p>Call: {{ optional($company)->hotline }}</p> --}}
                                         {{-- <p>Tax Invoice (Mushak 6.3)</p> --}}
                                     </div>
 
