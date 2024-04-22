@@ -20,10 +20,10 @@ class ReportController extends Controller
                 $query->where('order_id', $request->order_id);
             })
             ->when($request->filled('from_date'), function ($query) use ($request) {
-                $query->where('from_date', '>=', $request->from_date);
+                $query->where('date', '>=', $request->from_date);
             })
             ->when($request->filled('to_date'), function ($query) use ($request) {
-                $query->where('to_date', '<=', $request->to_date);
+                $query->where('date', '<=', $request->to_date);
             })
             ->paginate(25);
 
