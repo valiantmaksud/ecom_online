@@ -70,35 +70,11 @@ class CheckoutService
         $this->order->refresh();
 
         $this->order->update([
-            'subtotal'              => $this->order->orderDetails->sum('total'),
-            'coupon_cost'           => $this->getCouponAmount(),
+            'payable_amount'              => $this->order->orderDetails->sum('total'),
             'paid_amount'           => 0,
         ]);
     }
 
-
-
-    public function getCouponAmount()
-    {
-        $this->order->refresh();
-        try {
-            if ($this->order->coupon_id) {
-                
-                if (date('Y-m-d') >= $this->order->coupon->end_date) {
-                    return 0;
-                }
-
-                if($this->order->coupon->type == 'fixed') {
-                    return $this->order->coupon->value;
-                } else {
-                    return $this->order->subtotal * ($this->order->coupon->value / 100);
-                }
-            }
-            return 0;
-        } catch (\Throwable $th) {
-            return 0;
-        }
-    }
 
     public function createOrUpdateDeliveryAddress($request)
     {

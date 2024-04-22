@@ -9,18 +9,24 @@ use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
 {
-    public function financialReport(Request $request){
-        $data['orders'] = Order::query()->withSum(["orderDetails"=> function($query){
+    public function financialReport(Request $request)
+    {
 
-        }]);
+        $data['orders'] = Order::query()->with('orderDetails.product')
+            ->when($request->filled('order_status'), function ($query) use ($request) {
+                $query->where('order_status', $request->order_status);
+            })
+            ->when($request->filled('order_id'), function ($query) use ($request) {
+                $query->where('order_id', $request->order_id);
+            })
+            ->when($request->filled('from_date'), function ($query) use ($request) {
+                $query->where('from_date', '>=', $request->from_date);
+            })
+            ->when($request->filled('to_date'), function ($query) use ($request) {
+                $query->where('to_date', '<=', $request->to_date);
+            })
+            ->paginate(25);
 
-        // $data['orders'] = Order::query()->withSum(['orderDetails as total_cost' => function($query){
-        //     $query->with(['product' => function($query){
-        //         $query->select('product_cost');
-        //     }]);
-        // }])->paginate(25);
-
-        return $data;
-        return view('admin.reports.financial');
+        return view('admin.reports.financial', $data);
     }
 }
