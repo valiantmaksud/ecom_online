@@ -117,15 +117,15 @@ class AuthController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'email'     => 'nullable|email|unique:users,email,' . auth()->user()->id,
-            'mobile'    => 'nullable|unique:users,mobile,' . auth()->user()->id,
+            'email'     => 'nullable|email|unique:user_infos,email,' . auth()->user()->id,
+            'phone'    => 'nullable|unique:user_infos,phone,' . auth()->user()->id,
             'password'  => 'nullable|confirmed',
         ]);
 
         $user = User::find(auth()->user()->id)->update([
             'name'      => $request->first_name . ' ' . $request->last_name,
             'email'     => $request->email ?? auth()->user()->email,
-            'mobile'    => $request->mobile ?? auth()->user()->mobile,
+            'phone'    => $request->mobile ?? auth()->user()->phone,
         ]);
 
         if ($request->filled('password') && $request->password == $request->password_confirmation) {
