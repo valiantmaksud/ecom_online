@@ -136,7 +136,6 @@
                                         <p>{{ $product->name }}</p>
                                         <span>৳ {{ $product->offer_price ?: $product->price }}</span>
                                     </div>
-                                    <x-frontend.size-selection-details :sizes="$product->product_sizes" :productid="$product->id" />
                                     <div class="order_cart related_cart">
                                         <div class="quantity">
                                             <a href="javascript:void(0)" class="quantity_minus">
