@@ -8,9 +8,6 @@
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a class="nav-link {{ request()->routeIs('frontend.profile.account') ? 'active' : '' }}" href="{{ route('frontend.profile.account') }}">Account</a>
         <a class="nav-link {{ request()->routeIs('frontend.profile.order') ? 'active' : '' }}" href="{{ route('frontend.profile.order') }}">Order</a>
-        {{-- <a class="nav-link {{ request()->routeIs('frontend.profile.track-order') ? 'active' : '' }}" href="{{ route('frontend.profile.track-order') }}">Track Order</a> --}}
-        {{-- <a class="nav-link {{ request()->routeIs('frontend.profile.wishlists') ? 'active' : '' }}" href="{{ route('frontend.profile.wishlist') }}">Wishlist</a> --}}
-        <a class="nav-link {{ request()->routeIs('frontend.profile.review') ? 'active' : '' }}" href="{{ route('frontend.profile.review') }}">Reviews</a>
         <a class="nav-link" href="{{ route('frontend.auth.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             <span>Logout</span>
         </a>

@@ -24,7 +24,7 @@
                                             value="{{ auth()->user()->name }}">
                                     </div>
                                 </div>
-                            
+
                             </div>
 
                             <div class="row mb-3">
@@ -38,9 +38,64 @@
                                 <div class="col-lg-12">
                                     <label class="address_portion" for="district">Division</label>
                                     <br>
-                                    <input type="text" class="form-control" id="division" name="division"
-                                            value="{{ old('division', auth()->user()->delivery_address?->division) }}">
-                                    
+                                    @php
+                                        $divisions = [
+                                            [
+                                                'id' => '1',
+                                                'name' => 'Chattagram',
+                                                'bn_name' => 'চট্টগ্রাম',
+                                                'url' => 'www.chittagongdiv.gov.bd',
+                                            ],
+                                            [
+                                                'id' => '2',
+                                                'name' => 'Rajshahi',
+                                                'bn_name' => 'রাজশাহী',
+                                                'url' => 'www.rajshahidiv.gov.bd',
+                                            ],
+                                            [
+                                                'id' => '3',
+                                                'name' => 'Khulna',
+                                                'bn_name' => 'খুলনা',
+                                                'url' => 'www.khulnadiv.gov.bd',
+                                            ],
+                                            [
+                                                'id' => '4',
+                                                'name' => 'Barisal',
+                                                'bn_name' => 'বরিশাল',
+                                                'url' => 'www.barisaldiv.gov.bd',
+                                            ],
+                                            [
+                                                'id' => '5',
+                                                'name' => 'Sylhet',
+                                                'bn_name' => 'সিলেট',
+                                                'url' => 'www.sylhetdiv.gov.bd',
+                                            ],
+                                            [
+                                                'id' => '6',
+                                                'name' => 'Dhaka',
+                                                'bn_name' => 'ঢাকা',
+                                                'url' => 'www.dhakadiv.gov.bd',
+                                            ],
+                                            [
+                                                'id' => '7',
+                                                'name' => 'Rangpur',
+                                                'bn_name' => 'রংপুর',
+                                                'url' => 'www.rangpurdiv.gov.bd',
+                                            ],
+                                            [
+                                                'id' => '8',
+                                                'name' => 'Mymensingh',
+                                                'bn_name' => 'ময়মনসিংহ',
+                                                'url' => 'www.mymensinghdiv.gov.bd',
+                                            ],
+                                        ];
+                                    @endphp
+                                    <select name="division" class="form-control" id="division">
+                                        @foreach ($divisions as $item)
+                                            <option value="{{ $item['name'] }}" {{ auth()->user()->delivery_address?->division == $item['name'] ? 'selected' : '' }}>{{ $item['name'] }}</option>
+                                        @endforeach
+                                    </select>
+
                                 </div>
                             </div>
 
@@ -48,9 +103,10 @@
                                 <div class="col-lg-12">
                                     <label class="address_portion" for="district">District</label>
                                     <br>
-                                    <input type="text" class="form-control" id="district" name="district"
-                                            value="{{ old('district', auth()->user()->delivery_address?->district) }}">
                                     
+                                    <input type="text" class="form-control" id="district" name="district"
+                                        value="{{ old('district', auth()->user()->delivery_address?->district) }}">
+
                                 </div>
                             </div>
 
@@ -59,12 +115,12 @@
                                     <label class="address_portion" for="thana">Thana</label>
                                     <br>
                                     <input type="text" class="form-control" id="thana" name="thana"
-                                            value="{{ old('thana', auth()->user()->delivery_address?->thana) }}">
-                                    
+                                        value="{{ old('thana', auth()->user()->delivery_address?->thana) }}">
+
                                 </div>
                             </div>
 
-                            
+
 
                             <div class="row">
                                 <div class="col-lg-12">

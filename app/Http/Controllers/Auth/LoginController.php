@@ -3,16 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Mail\PasswordResetMailable;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
-use App\Rules\CheckEmailExist;
-use App\Services\TransactionService;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
 
 class LoginController extends Controller
 {
@@ -84,23 +79,6 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         
-        // if (!Cookie::get('auth_email')) {
-        //     Cookie::queue('auth_email', auth()->user()->email, 10);
-        // }
-        // if (isAdmin()) {
-        //     return redirect()->route('admin.dashboard');
-
-        // }elseif (isVendor()) {
-        //     return redirect()->route('vendor.dashboard');
-
-        // }elseif (isCustomer()) {
-        //     return redirect()->route('customer.dashboard');
-
-        // }elseif (isAgent()) {
-
-        //     return redirect()->route('agent.dashboard');
-        // }
-        
         return redirect('/home');
     }
 
@@ -109,42 +87,6 @@ class LoginController extends Controller
 
 
 
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | SEND PASSWORD RESET EMAIL
-    |--------------------------------------------------------------------------
-    */
-    public function sendPasswordResetEmail(Request $request)
-    {
-
-        $request->validate([
-
-            'email'  => ['required', 'email', new CheckEmailExist]
-        ]);
-
-
-
-        $user = User::query()->where('email', $request->email)->first();
-
-        if ($user) {
-
-
-            $user->password_reset_token = Hash::make($user->id . uniqid());
-
-            $user->save();
-
-            $user = $user->refresh();
-
-
-            Mail::to($request->email)->send(new PasswordResetMailable($user, 'Password Recovery Email'));
-
-            return back()->with('message', 'Please Check Your Email For Password Reset Instruction!');
-        }
-
-        return back()->with('error', 'User not found by this email');
-    }
 
 
 

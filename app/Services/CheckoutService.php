@@ -70,7 +70,7 @@ class CheckoutService
         $this->order->refresh();
 
         $this->order->update([
-            'payable_amount'              => $this->order->orderDetails->sum('total'),
+            'payable_amount'        => (int) request('shipping_cost') + $this->order->orderDetails->sum('price') * $this->order->orderDetails->sum('quantity'),
             'paid_amount'           => 0,
         ]);
     }

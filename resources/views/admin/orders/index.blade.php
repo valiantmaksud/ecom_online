@@ -47,7 +47,7 @@
                                     </td>
                                     <td>{{ $item->order_note }}</td>
 
-                                    <td>{{ number_format($item->total, 2) }}</td>
+                                    <td>{{ number_format($item->payable_amount, 2) }}</td>
                                     <td class="text-center">
                                         <div class="btn-group">
                                             @if ($item->status != 'accepted' || auth()->id() == 2 || auth()->id() == 1)

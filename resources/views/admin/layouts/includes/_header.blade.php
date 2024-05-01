@@ -191,14 +191,14 @@
                     </a>
 
                     <!--------------- LOGOUT ----------------->
-                    {{-- <a class="dropdown-item" href="{{ route('admin.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-head').submit();">
+                    <a class="dropdown-item" href="{{ route('admin.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form-head').submit();">
                         <i class="mdi mdi-logout text-muted font-size-16 align-middle me-1"></i>
                         <span class="align-middle">Logout</span>
                     </a>
                     <form id="logout-form-head" action="{{ route('admin.logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
-                     --}}
+                    
 
                 </div> 
                 <!-------------- /DROPDOWN MENU --------------->

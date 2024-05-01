@@ -33,7 +33,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="invoice-title">
-                            <h4 class="float-end font-size-15">Invoice #{{ $order->order_id }} <span class="badge bg-success font-size-12 ms-2">Paid</span></h4>
+                            {{-- <h4 class="float-end font-size-15">Order #{{ $order->id }} <span class="badge bg-success font-size-12 ms-2">Paid</span></h4> --}}
                             <div class="mb-4">
                                 {{-- @if (file_exists(company()?->logo))
                                     <img src="{{ asset(company()->logo) }}" alt="logo" height="28"/>
@@ -54,8 +54,9 @@
                                 <div class="text-muted">
                                     <h5 class="font-size-16 mb-3">Billed To:</h5>
                                     <h5 class="font-size-15 mb-2">{{ optional($order->customer)->name }}</h5>
-                                    <p class="mb-1">{{ optional($order->delivery_address)->address }}</p>
-                                    <p class="mb-1">{{ optional($order->customer)->email }}</p>
+                                    <p class="mb-1">Address: {{ optional($order->user?->delivery_address)->address }}</p>
+                                    <p class="mb-1">Division: {{ $order->user?->delivery_address?->division }}</p>
+                                    <p class="mb-1">District: {{ $order->user?->delivery_address?->district }}, Thana: {{ $order->user->delivery_address?->thana }}</p>
                                     <p>{{ optional($order->customer)->mobile }}</p>
                                 </div>
                             </div>
@@ -122,14 +123,7 @@
                                             <td class="border-0 text-end">- 0</td>
                                         </tr>
                                         <!-- end tr -->
-                                        
-                                        <tr>
-                                            <th scope="row" colspan="4" class="border-0 text-end">
-                                                Shipping Charge :</th>
-                                            <td class="border-0 text-end">{{ number_format($order->shipping_cost) }}</td>
-                                        </tr>
-                                        <!-- end tr -->
-                                       
+                                                                               
                                         <tr>
                                             <th scope="row" colspan="4" class="border-0 text-end">
                                                 Paid :</th>
@@ -139,7 +133,7 @@
                                         
                                         <tr>
                                             <th scope="row" colspan="4" class="border-0 text-end">Total</th>
-                                            <td class="border-0 text-end"><h4 class="m-0 fw-semibold">{{ number_format($order->total, 2) }}</h4></td>
+                                            <td class="border-0 text-end"><h4 class="m-0 fw-semibold">{{ number_format($order->payable_amount - $order->paid_amount, 2) }}</h4></td>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -190,7 +184,7 @@
                                             </div>
                                             <div class="input-group mb-3">
                                                 <label class="input-group-text">Payment Amount</label>
-                                                <input type="text" class="form-control" name="paid_amount">
+                                                <input type="text" class="form-control" name="paid_amount" value="{{ $order->payable_amount - $order->paid_amount }}">
                                             </div>
                                             <div class="input-group mb-3">
                                                 <label class="input-group-text">Delivery Date</label>

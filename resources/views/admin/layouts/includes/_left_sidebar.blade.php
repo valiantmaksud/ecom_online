@@ -11,12 +11,12 @@
 
             <!-- SMALL LOGO -->
             <span class="logo-sm">
-                <img src="{{ asset('assets/admin') }}/images/dummy-logo.png" alt="" height="22">
+                <img src="{{ asset('assets/admin') }}/images/logo-dark.png" alt="" height="60" width="120">
             </span>
 
             <!-- LARGE LOGO -->
             <span class="logo-lg">
-                <img src="{{ asset('assets/admin') }}/images/dummy-logo.png" alt="" height="22">
+                <img src="{{ asset('assets/admin') }}/images/logo-light.png" alt="" height="60" width="120">
             </span>
         </a>
         <!-- /DARK LOGO ---->
@@ -26,12 +26,11 @@
 
             <!-- LARGE LOGO -->
             <span class="logo-lg">
-                <img src="{{ asset('assets/admin') }}/images/dummy-logo.png" alt="" height="22">
+                <img src="{{ asset('assets/admin') }}/images/logo-dark.png" alt="" height="22">
             </span>
-
             <!-- SMALL LOGO -->
             <span class="logo-sm">
-                <img src="{{ asset('assets/admin') }}/images/dummy-logo-light.png" alt="" height="22">
+                <img src="{{ asset('assets/admin') }}/images/logo-light.png" alt="" height="22">
             </span>
         </a>
         <!-- /LIGHT LOGO -->
@@ -179,11 +178,6 @@
             </li>
             <!-------------- Report --------->
 
-
-
-`
-               
-{{-- 
                 <li>
                     <a href="{{ route('admin.logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -193,7 +187,7 @@
                     <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
-                </li> --}}
+                </li>
             </ul>
             <!-- /MENU LIST -->
 

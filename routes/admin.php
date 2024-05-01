@@ -23,13 +23,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
    Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
    Route::post('login',[LoginController::class, 'login'])->name('login');
-
-   Route::get('home', [HomeController::class, 'index'])->name('home');
+   Route::post('logout',[LoginController::class, 'logout'])->name('logout');
 
 });
 
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+Route::group(['middleware' => ['auth:admin'],'prefix' => 'admin', 'as' => 'admin.'], function () {
 
 Route::get('home', [HomeController::class, 'index'])->name('home');
     
