@@ -22,7 +22,7 @@ Route::post('logout',                           [AuthController::class,         
 
 
 Route::get('/',                                 [FrontendController::class,      'index'])->name('frontend.index');
-Route::get('search',                            [FrontendController::class,      'index'])->name('frontend.search');
+Route::get('search',                            [ProductController::class,      'search'])->name('frontend.search');
 Route::get('product/{slug}',                    [ProductController::class,      'show'])->name('product.show');
 Route::get('product-view',                      [ProductController::class,      'quickView'])->name('product-quick-view');
 

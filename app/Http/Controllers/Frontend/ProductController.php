@@ -38,8 +38,9 @@ class ProductController extends Controller
     {
         $data['products']       = Product::query()->categoryFiltering()->nameFiltering()->paginate(40);
         $data['categories']     = Category::query()->withCount('products as total_product')->get();
-        $data['min_price']      = Product::query()->categoryFiltering()->nameFiltering()->min('price');
-        $data['max_price']      = Product::query()->categoryFiltering()->nameFiltering()->max('price');
+        $data['min_price']      = Product::query()->min('final_price');
+        $data['max_price']      = Product::query()->max('final_price');
+
         return view('frontend/product/search', $data);
     }
 }

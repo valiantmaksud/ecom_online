@@ -58,7 +58,7 @@ class ProductController extends Controller
             'subcategory_id'=> 'required',
             'product_cost'=> 'required',
             'selling_price'=> 'required',
-            'discount_price'=> 'required',
+            'discount_price'=> 'nullable',
             'final_price'=> 'required',
             'status'=> 'required'
         ]);
@@ -67,6 +67,7 @@ class ProductController extends Controller
         }else{
             $data['slug'] = $request->slug;
         }
+        $data['discount_price'] = $request->discount_price ?? 0;
         $product = Product::create($data);
     
         $this->upload_file($request->image, $product, 'image', 'products', 'webp');
@@ -118,7 +119,7 @@ class ProductController extends Controller
             'subcategory_id'=> 'required',
             'product_cost'=> 'required',
             'selling_price'=> 'required',
-            'discount_price'=> 'required',
+            'discount_price'=> 'nullable',
             'final_price'=> 'required',
             'status'=> 'required'
         ]);
@@ -127,6 +128,7 @@ class ProductController extends Controller
         }else{
             $data['slug'] = $request->slug;
         }
+        $data['discount_price'] = $request->discount_price ?? 0;
         $product = Product::find($id);
         $product->update($data);
     

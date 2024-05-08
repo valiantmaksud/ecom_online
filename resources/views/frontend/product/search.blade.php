@@ -8,11 +8,7 @@
 @endphp
 <x-layout>
     <x-slot name="title">
-        @if (request()->filled('category'))
-            {{ optional(category()->where('slug', request()->category)->first())->name }}
-        @else
-            All Product
-        @endif
+        All Product
     </x-slot>
     <x-slot name="content">
         <!-- menu product section start herer -->
@@ -21,7 +17,7 @@
                 {{-- <div class="container"> --}}
                 <h2 class="menu_product_title">
                     @if (request()->filled('category'))
-                        {{ optional(category()->where('slug', request()->category)->first())->name }}
+                        Category: {{ request()->category }}
                     @else
                         All Product
                     @endif
@@ -46,7 +42,7 @@
                                 <p class="mt-5">PRODUCT CATEGORIES</p>
                                 @foreach ($categories as $category)
                                     <div class="product-categories d-flex justify-content-between">
-                                        <a href="{{ route('frontend.search',['category' => $category->slug]) }}"
+                                        <a href="{{ route('frontend.search', ['category' => $category->name]) }}"
                                             style="color: var(--pink)">{{ $category->name }}</a>
                                         <p class="badge"
                                             style="background-color: var(--pink); padding: 3px 10px; line-height: inherit; height: 22px;">
@@ -55,22 +51,6 @@
                                     </div>
                                 @endforeach
 
-
-                                <div class="sidebar_content mt-3">
-                                    <p class="filter-title">FILTER BY COLOR</p>
-                                    <div class="filter-by-brand">
-                                        <div class="form_label">
-                                            @foreach ($sizes as $key => $name)
-                                                <input type="checkbox" name="sizes[]" value="{{ $key }}">
-                                                <label for="{{ $name }}">
-                                                    <a href="javascript:void(0)">{{ $name }} (1)</a>
-                                                </label><br>
-                                            @endforeach
-
-                                        </div>
-                                    </div>
-
-                                </div>
                             </div>
                         </div>
                         <div class="col-lg-9">
@@ -95,45 +75,7 @@
 
                                         @foreach ($products as $product)
                                             <div class="col-lg-3 col-md-4 col-sm-6 home_product_width width-50">
-                                                <div class="product_box">
-                                                    <div class="product_image">
-                                                        @if (file_exists($product->image))
-                                                            <img class="lazy product-image-height" src="{{ asset($product->image) }}"
-                                                                alt="{{ $product->title }}" style="height: 304px">
-                                                        @else
-                                                            <img class="lazy product-image-height" src="{{ asset('assets/frontend') }}/image/bg/product1.jpg"
-                                                                alt="{{ $product->title }}" style="height: 304px">
-                                                        @endif
-                                                        <div class="show_once">
-                                                            <a href="javascript:void(0)" class="quick_view_btn"
-                                                            onclick="loadModal(`{{ $product->id }}`)">QUICK SHOP</a>
-                                                        </div>
-
-                                                        {{-- <p>Best Seller</p> --}}
-
-                                                    </div>
-                                                    <div class="product_det">
-                                                        <div class="review">
-                                                            <i class="fas fa-star"></i><i class="fas fa-star">
-                                                            </i><i class="fas fa-star"></i><i class="fas fa-star">
-                                                            </i><i class="fas fa-star"></i> <a class="view"
-                                                                href="#">(1 reviews)</a>
-                                                        </div>
-                                                        <a href="{{ route('product.show', $product->slug) }}" class="parent">
-                                                            <span class="product-text">{{ Str::limit($product->name, 20, '...') }}</span>
-                                                        </a>
-                                                        <P class="child">
-                                                            <span>{{ $product->price }}৳</span>
-                                                            {{ $product->offer_price }}৳
-                                                        </P>
-                                                    </div>
-                                                    <x-frontend.size-selection :sizes="$product->product_sizes" :productid="$product->id" />
-                                                    <div class="product_cart">
-                                                        <button class="btn add-to-cart-btn" type="button" data-product-id="{{ $product->id }}">
-                                                            <i class="fas fa-shopping-bag"></i> ADD TO CART
-                                                        </button>
-                                                    </div>
-                                                </div>
+                                                <x-frontend.product-box :item="$product" />
                                             </div>
                                         @endforeach
 
@@ -152,7 +94,7 @@
 
     <x-slot name="scripts">
         <script>
-            const url = {{ request()->fullUrl() }}
+            const url = "{{ request()->fullUrl() }}"
             function loadProduct() {
                 let _this = $(this);
 

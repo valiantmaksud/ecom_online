@@ -26,4 +26,11 @@ class Product extends Model
         return $this->belongsTo(SubCategory::class);
     }
 
+
+    public function scopeCategoryFiltering()
+    {
+        if (request()->filled('category')) {
+            return self::whereHas('category', fn($q)=> $q->where('name', request('category')) );
+        }
+    }
 }
