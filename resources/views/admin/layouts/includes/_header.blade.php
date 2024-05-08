@@ -35,12 +35,12 @@
                     {{ env('APP_NAME') }}
                     <!-- LARGE LOGO -->
                     <span class="logo-lg">
-                        <img src="{{ asset('assets/admin') }}/images/dummy-logo.png" alt="" height="22">
+                        <img src="{{ asset('assets/share') }}/logo/logo.png" alt="" height="22">
                     </span>
 
                     <!-- SMALL LOGO -->
                     <span class="logo-sm">
-                        <img src="{{ asset('assets/admin') }}/images/dummy-logo-light.png" alt="" height="22">
+                        <img src="{{ asset('assets/share') }}/logo/logo.png" alt="" height="22">
                     </span>
                 </a> <!-- /LIGHT LOGO -->
 

@@ -27,7 +27,6 @@
                                                     <th scope="col" style="width:8%" class="pl-pr-0">Order Date</th>
                                                     <th scope="col" style="width:15%" class="grand-total-td">Total Price</th>
                                                     <th scope="col" style="width:10%" class="pl-pr-0">Status</th>
-                                                    <th scope="col" style="width:12%">Payment Status</th>
                                                     <th scope="col" style="width:10%">Action</th>
                                                 </tr>
                                             </thead>
@@ -39,7 +38,7 @@
                                                             <h6>{{ $item->date }}</h6>
                                                         </td>
                                                         <td class="table-subtotal" style="width:15%">
-                                                            <h6><span class="mt-2" style="color:black"></span>{{ number_format($item->total, 2) }}</h6>
+                                                            <h6><span class="mt-2" style="color:black"></span>{{ number_format($item->payable_amount, 2) }}</h6>
                                                         </td>
                                                         <td class="order-status" style="width:10%">
                                                             <span class="badge bg-secondary">
@@ -54,7 +53,6 @@
                                                                 @endif
                                                             </span>
                                                         </td>
-                                                        <td> <p><span class="mt-2" style="color:black">{{ strtoupper($item->payment_method) }}</span></p></td>
                                                         <td>
                                                             <a href="{{ route('frontend.profile.order.show', $item->id) }}"
                                                                 class="item">
@@ -65,7 +63,7 @@
                                                 @empty
                                                 <tr>
                                                     <td class="text-ddanger" colspan="15">
-                                                        <strong>No recent orders     !</strong>
+                                                        <strong>No recent orders !</strong>
                                                     </td>
                                                 </tr>
                                                 @endforelse

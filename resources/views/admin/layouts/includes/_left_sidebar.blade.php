@@ -11,12 +11,12 @@
 
             <!-- SMALL LOGO -->
             <span class="logo-sm">
-                <img src="{{ asset('assets/admin') }}/images/logo-dark.png" alt="" height="60" width="120">
+                <img src="{{ asset('assets/share') }}/logo/logo.png" alt="" height="60" width="120">
             </span>
 
             <!-- LARGE LOGO -->
             <span class="logo-lg">
-                <img src="{{ asset('assets/admin') }}/images/logo-light.png" alt="" height="60" width="120">
+                <img src="{{ asset('assets/share') }}/logo/logo.png" alt="" height="60" width="120">
             </span>
         </a>
         <!-- /DARK LOGO ---->
@@ -26,11 +26,11 @@
 
             <!-- LARGE LOGO -->
             <span class="logo-lg">
-                <img src="{{ asset('assets/admin') }}/images/logo-dark.png" alt="" height="22">
+                <img src="{{ asset('assets/share') }}/logo/logo.png" alt="" height="22">
             </span>
             <!-- SMALL LOGO -->
             <span class="logo-sm">
-                <img src="{{ asset('assets/admin') }}/images/logo-light.png" alt="" height="22">
+                <img src="{{ asset('assets/share') }}/logo/logo.png" alt="" height="22">
             </span>
         </a>
         <!-- /LIGHT LOGO -->

@@ -9,42 +9,25 @@ use App\Http\Controllers\Controller;
 class OrderController extends Controller
 {
 
-
-    public function pending()
+    public function index(Request $request)
     {
-        $orders = Order::query()->latest()->with('user')->where('status', 'pending')->paginate(25);
-        return view('admin.orders.pending', compact('orders'));
-    }
+        $orders = Order::query()
+        ->with('user')
+        ->when($request->filled('order_status'), function ($query) use ($request) {
+            $query->where('order_status', $request->order_status);
+        })
+        ->when($request->filled('order_id'), function ($query) use ($request) {
+            $query->where('order_id', $request->order_id);
+        })
+        ->when($request->filled('from_date'), function ($query) use ($request) {
+            $query->where('date', '>=', $request->from_date);
+        })
+        ->when($request->filled('to_date'), function ($query) use ($request) {
+            $query->where('date', '<=', $request->to_date);
+        })
+        ->latest()->paginate(25);
 
-
-
-
-
-    public function index()
-    {
-        $orders = Order::query()->with('user')->latest()->paginate(25);
         return view('admin.orders.index', compact('orders'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -64,17 +47,6 @@ class OrderController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -86,14 +58,4 @@ class OrderController extends Controller
         cache()->forget('pending_orders');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

@@ -302,7 +302,6 @@
                                         <th class="text-left">Item Details</th>
                                         <th>Qty</th>
                                         <th>Rate</th>
-                                        <th>Discount</th>
                                         <th>Amount</th>
                                     </tr>
                                 </thead>
@@ -331,7 +330,6 @@
                                             </td>
                                             <td class="text-center">{{ $detail->quantity }}</td>
                                             <td class="text-center">{{ number_format($detail->price, 2, '.', '') }}</td>
-                                            <td class="text-center">{{ number_format($detail->total, 2, '.', '') }}</td>
                                             <td class="text-right">
                                                 @php
                                                     $line_total = ($detail->price * $detail->quantity);
@@ -354,22 +352,9 @@
                                     <div class="row" style="display: flex; justify-content: space-between;">
                                         <div class="left-side">
                                             <p>Subtotal: </p>
-                                            <p>VAT:</p>
                                         </div>
                                         <div class="right-side">
-                                            <p>{{ number_format($order->subtotal, 2, '.', '') }}</p>
-                                            <p>{{ number_format(0, 2, '.', '') }}</p>
-                                        </div>
-                                    </div>
-                                    ------------
-                                    <div class="row" style="display: flex; justify-content: space-between;">
-                                        <div class="left-side">
-                                            <p>Shipping Cost: </p>
-                                            <p>Discount:</p>
-                                        </div>
-                                        <div class="right-side">
-                                            <p>{{ number_format($order->shipping_cost, 2, '.', '') }}</p>
-                                            <p>(-) {{ number_format($order->coupon_cost, 2, '.', '') }}</p>
+                                            <p>{{ number_format($order->payable_amount, 2, '.', '') }}</p>
                                         </div>
                                     </div>
                                     ------------
@@ -379,7 +364,7 @@
                                             <p>Paid Amount: </p>
                                         </div>
                                         <div class="right-side">
-                                            <p>{{ number_format($order->total, 2, '.', '') }}</p>
+                                            <p>{{ number_format($order->payable_amount, 2, '.', '') }}</p>
                                             <p>{{ number_format($order->paid_amount, 2, '.', '') }}</p>
                                         </div>
                                     </div>
@@ -389,7 +374,7 @@
                                             <p>Cash To Collect:</p>
                                         </div>
                                         <div class="right-side">
-                                            <p>{{ number_format($order->total, 2, '.', '') }}</p>
+                                            <p>{{ number_format($order->payable_amount, 2, '.', '') }}</p>
                                         </div>
                                     </div>
                                 </div>

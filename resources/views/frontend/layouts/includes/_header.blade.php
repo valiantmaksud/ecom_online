@@ -5,7 +5,7 @@
                 <div class="head_left">
                     <a href="{{ route('frontend.index') }}">
                         @if (file_exists(website_setting('site_logo')))
-                            <img src="{{ asset(website_setting('site_logo')) }}" alt="{{ website_setting('site_title') }}" width="314" height="58">
+                            <img src="{{ asset('assets/share') }}/logo/logo.png" alt="{{ website_setting('site_title') }}" width="314" height="58">
                         @else
                             <h3>{{ website_setting('site_title') }}</h3>
                         @endif

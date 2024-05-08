@@ -1,9 +1,6 @@
 
     <x-frontend.newsletter />
 
-    @if (website_setting('fb_chat_enable'))
-        <x-frontend.messenger-chat />
-    @endif
     <!-- footer list section start here -->
     <section class="footer_list">
         <div class="container">
@@ -11,7 +8,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                         <div class="footer_content">
-                            <h4>{{ website_settings()->where('key', 'site_title')->first()->value ?? "" }}™</h4>
+                            <h4><span class="text-success">Premier</span> <span class="text-danger">mart</span> ™</h4>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-6 mb-4 width-50">
@@ -71,7 +68,7 @@
     <div class="copyright">
         <div class="container">
             <div class="copyright_inner">
-                <p>© {{ date('Y') }} {{ website_setting('site_title') ?? "" }}. All Rights Reserved</p>
+                <p>© {{ date('Y') }} <span class="text-success">Premier</span> <span class="text-danger">mart</span>. All Rights Reserved</p>
             </div>
         </div>
     </div>
@@ -97,8 +94,8 @@
       </div>
 
         <div class="footer-search-box search-box" id="searchBox" style="display:none">
-            <form class="search-box-form d-flex" action="http://127.0.0.1:8000/search" method="GET">
-                <input type="hidden" name="_token" value="8qUljgBPDW0sP0Cv1BZVA5qIK4HZ7o77H79pMQgw">
+            <form class="search-box-form d-flex" action="/search" method="GET">
+                @csrf
                 <div class="search-icon">
                     <button type="submit" class="search-button">
                         <i class="fal fa-search"></i>

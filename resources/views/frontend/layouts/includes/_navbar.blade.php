@@ -10,16 +10,10 @@
 
 
         <!------------------ LOGO ------------------>
-        @if (file_exists(website_setting('site_logo')))
-            <a href="{{ route('frontend.index') }}" class="site-logo">
-                <img src="{{ asset(website_setting('site_logo')) }}" alt="{{ website_setting('site_title') }}"
-                    width="314" height="58">
-            </a>
-        @else
-            <a href="{{ route('frontend.index') }}" class="site-logo site-title">
-                <h3>{{ website_setting('site_title') }}</h3>
-            </a>
-        @endif
+        <a href="{{ route('frontend.index') }}" class="site-logo">
+            <img src="{{ asset('assets/share') }}/logo/logo.png" alt="{{ website_setting('site_title') }}"
+                width="314" height="58">
+        </a>
 
         <!------------- NAVBAR ALL ITEMS ------------>
         <div class="collapse navbar-collapse navbar-items">

@@ -1,6 +1,59 @@
 <x-backend-layout>
     <x-slot name="title">Orders</x-slot>
     <x-slot name="content">
+
+        <div class="card">
+            <div class="card-body">
+                <form action="">
+                    <div class="row mb-3">
+        
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <div class="input-group-text">From Date</div>
+                                <input type="date" name="from_date" value="{{ request('from_date') }}" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <div class="input-group-text">To Date</div>
+                                <input type="date" name="to_date" value="{{ request('to_date') }}" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <div class="input-group-text">Order No</div>
+                                <input type="text" name="order_id" value="{{ request('order_id') }}" class="form-control">
+                            </div>
+                        </div>
+        
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <div class="input-group-text">Status</div>
+                                <select name="order_status" class="form-control select2" data-placeholder="Select Status" data-selected="{{ request('order_status') }}">
+                                    <option value=""></option>
+                                    <option value="0">Pending</option>
+                                    <option value="1">Processing</option>
+                                    <option value="2">Deliveried</option>
+                                    <option value="3">Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="float-end">
+                        <button class="btn btn-sm btn-outline-info">
+                            <i class="fa fa-search"></i> Search
+                        </button>
+                        <a href="{{ request()->url() }}" class="btn btn-sm btn-outline-danger">
+                            <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
+                        </a>
+                    </div>
+        
+                </form>
+            </div>
+        </div>
+        
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
@@ -69,12 +122,12 @@
                                                             Edit
                                                         </a>
                                                     </li>
-                                                    <li>
+                                                    {{-- <li>
                                                         <a href="#" class="dropdown-item">
                                                             <i class="mdi mdi-trash-can font-size-16 text-danger me-1"></i>
                                                             Delete
                                                         </a>
-                                                    </li>
+                                                    </li> --}}
                                                 </ul>
                                             </div>
                                             @endif
