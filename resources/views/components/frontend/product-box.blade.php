@@ -22,7 +22,7 @@
         </a>
         {{-- <a href="{{ route('product.show', $item->slug) }}">{!! Str::words($item->description, 10, '...') !!}</a> --}}
         <P class="child">
-            <span>{{ $item->selling_price }}৳</span> {{ $item->final_price }}৳
+            @if ($item->discount_price > 0)<span>{{ $item->selling_price }}৳</span> @endif {{ $item->final_price }}৳
         </P>
     </div>
     <div class="product_cart">
