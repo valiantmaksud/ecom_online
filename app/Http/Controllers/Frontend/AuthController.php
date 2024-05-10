@@ -56,7 +56,8 @@ class AuthController extends Controller
                 $this->validate($request, [
                     'name'          => 'nullable|string|max:255',
                     'email'         => 'nullable|email|unique:user_infos,email',
-                    'phone_number'  => 'nullable|unique:user_infos,phone',
+                    'phone_number'  => 'required|unique:user_infos,phone',
+                    'mobile_password'  => 'required|string',
                 ]);
                 $user = User::create([
                     'name'      => $request->name ?? $request->phone_number,

@@ -9,7 +9,6 @@
                     <form action="{{ route('frontend.auth.register') }}" method="POST">
                         @csrf
                         <x-frontend.auth.register-with-phone :phone_number="old('phone_number')" :errors="$errors"/>
-                        <x-frontend.auth.register-with-email :phone_number="old('phone_number')" :errors="$errors"/>
                   
                         <div class="login_btn">
                             <button type="submit" class="login_btn btn_log" id="register">SIGN UP</button>

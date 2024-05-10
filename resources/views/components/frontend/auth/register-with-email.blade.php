@@ -11,7 +11,7 @@
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Password</span>
-        <input type="password" class="form-control" placeholder="Password" name="email_password">
+        <input type="password" class="form-control" placeholder="Password" name="mobile_password">
     </div>
 
  

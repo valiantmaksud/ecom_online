@@ -20,8 +20,8 @@
         <div class="input_img">
             <span class="input-group-text rounded-0" style="height: 100%;border:none"><i class="fas fa-lock fa-2x"></i></span>
         </div>
-        <input type="password" class="rounded-0" name="password"
-            value="{{ old('password') }}" id="password" placeholder="Password" autocomplete="off"
+        <input type="password" class="rounded-0" name="mobile_password"
+            value="{{ old('mobile_password') }}" id="password" placeholder="Password" autocomplete="off"
             required>
     </div>
 </div>
