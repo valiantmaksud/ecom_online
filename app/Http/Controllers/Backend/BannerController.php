@@ -89,7 +89,7 @@ class BannerController extends Controller
     public function update(Request $request, $id)
     {
         $banner = Banner::query()->find($id);
-        $banner->update($request->only('title'));
+        $banner->update($request->only('title', 'link'));
             
         $this->upload_file($request->image, $banner, 'image', 'banners', 'webp');
 

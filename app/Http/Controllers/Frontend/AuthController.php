@@ -62,7 +62,7 @@ class AuthController extends Controller
                     'name'      => $request->name ?? $request->phone_number,
                     'email'     => $request->email ?? $request->phone_number,
                     'phone'     => $request->phone_number,
-                    'password'  => bcrypt($request->password ?? $request->email_password),
+                    'password'  => Hash::make($request->mobile_password ?? $request->email_password),
 
                 ]);
 
