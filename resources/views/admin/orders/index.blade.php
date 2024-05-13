@@ -64,6 +64,7 @@
                                 <th>Sl</th>
                                 <th>Date</th>
                                 <th>Order No.</th>
+                                <th>Products</th>
                                 <th>Customer</th>
                                 <th>Status</th>
                                 <th>Note</th>
@@ -82,6 +83,12 @@
                                     </td>
                                     <td>
                                         {{ $item->order_id }}
+                                    </td>
+                                    <td>
+                                        @foreach ($item->orderDetails as $detail)
+                                            <span>{{ $detail->product?->name }} - {{ $detail->quantity }} qty</span>
+                                            <br>
+                                        @endforeach
                                     </td>
                                     <td>{{ optional($item->user)->name }}</td>
                                     <td>

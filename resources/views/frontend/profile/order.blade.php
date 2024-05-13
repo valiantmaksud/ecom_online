@@ -25,6 +25,7 @@
                                                 <tr>
                                                     <th scope="col" style="width:15%">Invoice Number</th>
                                                     <th scope="col" style="width:8%" class="pl-pr-0">Order Date</th>
+                                                    <th scope="col" style="width:20%" class="pl-pr-0">Products</th>
                                                     <th scope="col" style="width:15%" class="grand-total-td">Total Price</th>
                                                     <th scope="col" style="width:10%" class="pl-pr-0">Status</th>
                                                     <th scope="col" style="width:10%">Action</th>
@@ -36,6 +37,13 @@
                                                         <td class="table-serial" style="width:15%">{{ $item->order_id }}</td>
                                                         <td class="table-name" style="width:8%">
                                                             <h6>{{ $item->date }}</h6>
+                                                        </td>
+                                                        <td class="table-name">
+                                                            @foreach ($item->orderDetails as $detail)
+                                                                <span>{{ $detail->product?->name }} - {{ $detail->quantity }} qty</span>
+                                                                
+                                                                <br>
+                                                            @endforeach
                                                         </td>
                                                         <td class="table-subtotal" style="width:15%">
                                                             <h6><span class="mt-2" style="color:black"></span>{{ number_format($item->payable_amount, 2) }}</h6>

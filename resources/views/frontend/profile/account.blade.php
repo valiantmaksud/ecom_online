@@ -96,9 +96,9 @@
                                                             <p>Phone</p>
                                                         </div>
                                                         <div class="col-lg-8">
-                                                            <span>{{ auth()->user()->mobile }}</span>
+                                                            <span>{{ auth()->user()->phone }}</span>
                                                         </div>
-                                                        @if (!auth()->user()->mobile)
+                                                        @if (!auth()->user()->phone)
                                                             <div class="col-lg-2 text-end">
                                                                 <a href="javascript:void(0)" id="editMobileBtn"
                                                                     class="profile-edit-btn">Edit
