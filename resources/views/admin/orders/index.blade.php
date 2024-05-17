@@ -86,7 +86,7 @@
                                     </td>
                                     <td>
                                         @foreach ($item->orderDetails as $detail)
-                                            <span>{{ $detail->product?->name }} - {{ $detail->quantity }} qty</span>
+                                            <span><a href="{{ route('product.show', $detail->product->slug) }}" target="_blank" rel="noopener noreferrer">{{ $detail->product?->name }} - {{ $detail->quantity }} qty</a></span>
                                             <br>
                                         @endforeach
                                     </td>
